@@ -1,0 +1,84 @@
+.contenido-Inicio{
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+}
+
+h2{
+    font-size: 3rem;
+}
+
+p{
+    font-size: 1.5rem;
+}
+
+.inicio-1{
+    background-color: #f7931e;
+}
+
+.margen{
+    padding: 5rem 10% 5rem 10%;
+}
+
+.inicio-1-contenedor{
+    display: grid;
+    grid-template-columns:  minmax(200px, 2fr) minmax(100px, 1fr);
+    align-items: center;
+    color: white;
+}
+
+.inicio-1-texto h1{
+    font-size: 4rem;
+    text-align: start;
+    padding: 0;
+    margin: 0;
+    margin-bottom: 2rem;
+}
+
+.inicio-1-texto p{
+    font-size: 1.3rem;
+}
+
+.inicio-1-presupuesto{
+    color: black;
+    text-align: center;
+    width: 20rem;
+    padding: 2rem;
+    background-color: white;
+    border-radius: 20px;
+    justify-self: end;
+}
+
+.inicio-1-presupuesto p{
+    font-weight: 500px;
+    font-size: 1rem;
+}
+
+.inicio-1-presupuesto-numeros{
+    font-size: 20px;
+    color: #f7931e;
+}
+
+.inicio-2{
+    background-color: blue;
+}
+
+.inicio-3{
+    background-color: rgb(114, 4, 187);
+}
+
+.inicio-4{
+    background-color: rgb(132, 197, 197);
+}
+
+.inicio-5{
+    background-color: rgb(215, 235, 43);
+}
+
+.inicio-6{
+    background-color: rgb(224, 88, 88);
+}
+
+.inicio-7{
+    background-color: rgb(101, 236, 89);
+}
