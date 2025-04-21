@@ -2,8 +2,8 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Servidor: localhost
--- Tiempo de generación: 09-12-2024 a las 13:23:35
+-- Servidor: 127.0.0.1
+-- Tiempo de generación: 21-04-2025 a las 19:48:31
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -18,183 +18,138 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `mvc_pdo`
+-- Base de datos: `proyecto`
 --
+CREATE DATABASE IF NOT EXISTS `proyecto` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+USE `proyecto`;
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `clients`
+-- Estructura de tabla para la tabla `clientes`
 --
 
-CREATE TABLE `clients` (
-  `id` bigint(20) UNSIGNED NOT NULL,
-  `idFiscal` varchar(9) NOT NULL COMMENT 'CIF DNI ESPANYOLES',
-  `contact_name` varchar(255) NOT NULL,
-  `contact_email` varchar(255) NOT NULL,
-  `contact_phone_number` varchar(255) DEFAULT NULL,
-  `company_name` varchar(255) DEFAULT NULL,
-  `company_address` varchar(255) DEFAULT NULL,
-  `company_phone_number` varchar(255) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Volcado de datos para la tabla `clients`
---
-
-INSERT INTO `clients` (`id`, `idFiscal`, `contact_name`, `contact_email`, `contact_phone_number`, `company_name`, `company_address`, `company_phone_number`) VALUES
-(1, '23', 'ad', 'ads', '12', 'ads', 'sad', NULL),
-(2, '34', 'prueba', 'prueba', '123', 'prubea', 'calle', NULL),
-(3, '12', 'sad', 'sad', '123', 'sad', 'fdf', '665');
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `projects`
---
-
-CREATE TABLE `projects` (
-  `id` bigint(20) UNSIGNED NOT NULL,
-  `name` varchar(255) NOT NULL,
-  `description` text DEFAULT NULL,
-  `deadline` date DEFAULT NULL,
-  `status` varchar(255) NOT NULL DEFAULT 'Abierto',
-  `user_id` bigint(20) UNSIGNED DEFAULT NULL COMMENT 'JEFE DE PROYECTO',
-  `client_id` bigint(20) UNSIGNED DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Volcado de datos para la tabla `projects`
---
-
-INSERT INTO `projects` (`id`, `name`, `description`, `deadline`, `status`, `user_id`, `client_id`) VALUES
-(1, 'Proyecto Prueba', 'Muchas cosas', '2023-11-11', 'Abierto', 1, NULL),
-(2, 'Proyecto Prueba2 ', 'Demasiado trabajo', '2024-01-11', 'Abierto', 1, NULL);
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `tasks`
---
-
-CREATE TABLE `tasks` (
-  `id` bigint(20) UNSIGNED NOT NULL,
-  `name` varchar(255) NOT NULL,
-  `description` text DEFAULT NULL,
-  `deadline` date DEFAULT NULL,
-  `task_status` varchar(255) NOT NULL DEFAULT 'Abierto',
-  `user_id` bigint(20) UNSIGNED DEFAULT NULL COMMENT 'RESPONSABLE DE TAREA',
-  `client_id` bigint(20) UNSIGNED DEFAULT NULL,
-  `project_id` bigint(20) UNSIGNED DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `users`
---
-
-CREATE TABLE `users` (
-  `id` bigint(20) UNSIGNED NOT NULL,
-  `name` varchar(255) DEFAULT NULL,
+CREATE TABLE `clientes` (
+  `id_cliente` int(11) NOT NULL,
+  `tel` int(11) NOT NULL,
   `email` varchar(255) NOT NULL,
-  `password` varchar(255) NOT NULL,
-  `usuario` varchar(100) NOT NULL COMMENT 'Para el login equivalente a nick'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+  `nombre` varchar(255) NOT NULL,
+  `apellido` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
 
 --
--- Volcado de datos para la tabla `users`
+-- Estructura de tabla para la tabla `facturas`
 --
 
-INSERT INTO `users` (`id`, `name`, `email`, `usuario`, `password`) VALUES
-(1, 'Ana Lopez', 'ana@gmail.com', 'ana', '$2y$10$ZPeR3B78CKw0QRChOo5k9uXkZzYxNts74uRUcZkmvL7S2vwZlUEJm'),
-(2, 'Luis Perez', 'luis@gmail.com', 'luis', '$2y$10$m6h8YqFNRiepmtAU9/rCWeMNTWe2Iu/5eowLgrYZTlC0wYlmWWinK'),
-(4, 'Maria Lopez', 'maria@gmail.com', 'maria', '$2y$10$YIYRQErNGus.5lPyfmabxulgVpRE5M6cOpdld/wJg84ZVFz97pSQa'),
-(11, 'Admin Mola', 'admin@gmail.com', 'admin', '$2y$10$VJ9clXPl.ZDCxZth89DrUujxkRYXkt01mUM7poFhl6PkN3upyQ8ve');
+CREATE TABLE `facturas` (
+  `id_factura` int(11) NOT NULL,
+  `precio_bruto` int(11) NOT NULL,
+  `iva` int(11) NOT NULL,
+  `precio_final` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `fechas`
+--
+
+CREATE TABLE `fechas` (
+  `id_fecha` int(11) NOT NULL,
+  `fecha` date NOT NULL,
+  `estado` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `pedidos`
+--
+
+CREATE TABLE `pedidos` (
+  `id_pedido` int(11) NOT NULL,
+  `descripcion` varchar(255) NOT NULL,
+  `servicio` varchar(255) NOT NULL,
+  `estado` varchar(255) NOT NULL,
+  `id_fecha` int(11) NOT NULL,
+  `id_cliente` int(11) NOT NULL,
+  `id_factura` int(11) NOT NULL,
+  `origen` varchar(255) NOT NULL,
+  `destino` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Índices para tablas volcadas
 --
 
 --
--- Indices de la tabla `clients`
+-- Indices de la tabla `clientes`
 --
-ALTER TABLE `clients`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `clients_contact_email_unique` (`contact_email`),
-  ADD UNIQUE KEY `users_cif_dni` (`idFiscal`);
+ALTER TABLE `clientes`
+  ADD PRIMARY KEY (`id_cliente`);
 
 --
--- Indices de la tabla `projects`
+-- Indices de la tabla `facturas`
 --
-ALTER TABLE `projects`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `projects_client_id_foreign` (`client_id`) USING BTREE,
-  ADD KEY `projects_user_id_foreign` (`user_id`) USING BTREE;
+ALTER TABLE `facturas`
+  ADD PRIMARY KEY (`id_factura`);
 
 --
--- Indices de la tabla `tasks`
+-- Indices de la tabla `fechas`
 --
-ALTER TABLE `tasks`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `tasks_client_id_foreign` (`client_id`) USING BTREE,
-  ADD KEY `tasks_project_id_foreign` (`project_id`) USING BTREE,
-  ADD KEY `tasks_user_id_foreign` (`user_id`) USING BTREE;
+ALTER TABLE `fechas`
+  ADD PRIMARY KEY (`id_fecha`);
 
 --
--- Indices de la tabla `users`
+-- Indices de la tabla `pedidos`
 --
-ALTER TABLE `users`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `users_email_unique` (`email`),
-  ADD UNIQUE KEY `users_UN` (`usuario`);
+ALTER TABLE `pedidos`
+  ADD PRIMARY KEY (`id_pedido`),
+  ADD KEY `fecha` (`id_fecha`),
+  ADD KEY `cliente` (`id_cliente`),
+  ADD KEY `factura` (`id_factura`);
 
 --
 -- AUTO_INCREMENT de las tablas volcadas
 --
 
 --
--- AUTO_INCREMENT de la tabla `clients`
+-- AUTO_INCREMENT de la tabla `clientes`
 --
-ALTER TABLE `clients`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+ALTER TABLE `clientes`
+  MODIFY `id_cliente` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT de la tabla `projects`
+-- AUTO_INCREMENT de la tabla `facturas`
 --
-ALTER TABLE `projects`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+ALTER TABLE `facturas`
+  MODIFY `id_factura` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT de la tabla `tasks`
+-- AUTO_INCREMENT de la tabla `fechas`
 --
-ALTER TABLE `tasks`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+ALTER TABLE `fechas`
+  MODIFY `id_fecha` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT de la tabla `users`
+-- AUTO_INCREMENT de la tabla `pedidos`
 --
-ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+ALTER TABLE `pedidos`
+  MODIFY `id_pedido` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- Restricciones para tablas volcadas
 --
 
 --
--- Filtros para la tabla `projects`
+-- Filtros para la tabla `pedidos`
 --
-ALTER TABLE `projects`
-  ADD CONSTRAINT `projects_FK` FOREIGN KEY (`client_id`) REFERENCES `clients` (`id`) ON UPDATE CASCADE,
-  ADD CONSTRAINT `projects_FK_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON UPDATE CASCADE;
-
---
--- Filtros para la tabla `tasks`
---
-ALTER TABLE `tasks`
-  ADD CONSTRAINT `tasks_FK` FOREIGN KEY (`project_id`) REFERENCES `projects` (`id`) ON UPDATE CASCADE,
-  ADD CONSTRAINT `tasks_FK_1` FOREIGN KEY (`client_id`) REFERENCES `clients` (`id`) ON UPDATE CASCADE,
-  ADD CONSTRAINT `tasks_FK_2` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON UPDATE CASCADE;
+ALTER TABLE `pedidos`
+  ADD CONSTRAINT `cliente` FOREIGN KEY (`id_cliente`) REFERENCES `clientes` (`id_cliente`) ON UPDATE CASCADE,
+  ADD CONSTRAINT `factura` FOREIGN KEY (`id_factura`) REFERENCES `facturas` (`id_factura`) ON UPDATE CASCADE,
+  ADD CONSTRAINT `fecha` FOREIGN KEY (`id_fecha`) REFERENCES `fechas` (`id_fecha`) ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

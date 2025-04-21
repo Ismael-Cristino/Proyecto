@@ -12,6 +12,11 @@ p{
     font-size: 1.5rem;
 }
 
+li{
+    font-size: 1.3rem;
+    color: rgb(38, 49, 131);
+}
+
 .inicio-1{
     background-color: #f7931e;
 }
@@ -59,8 +64,47 @@ p{
     color: #f7931e;
 }
 
-.inicio-2{
-    background-color: blue;
+.inicio-2-contenedor{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+}
+
+.inicio-2-imagenes {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-auto-rows: min-content; /* cada fila toma el alto mínimo necesario */
+    gap: 2rem;
+    align-items: start;
+}
+
+.inicio-2-img1 {
+    grid-row: 1/3;
+    border-radius: 3rem;
+    width: 18rem !important;
+    height: 40rem;
+}
+
+.inicio-2-img2 {
+    border-radius: 3rem;
+    width: 22rem !important;
+    height: 25rem;
+}
+
+.inicio-2-img3 {
+    border-radius: 3rem;
+    width: 22rem !important;
+    height: 13rem;
+}
+
+.inicio-2-texto{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.inicio-2-texto a{
+    width: 15rem;
 }
 
 .inicio-3{
@@ -69,6 +113,64 @@ p{
 
 .inicio-4{
     background-color: rgb(132, 197, 197);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 5rem;
+    color: black;
+}
+
+.formulario input,
+.formulario select,
+.formulario textarea {
+    width: 100%;
+    padding: 12px 15px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-sizing: border-box;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+.fila-doble, .fila-direcciones {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+}
+
+.fila-doble input, .fila-direcciones input {
+    width: 100%;
+}
+
+.fila-direcciones img {
+    align-self: flex-start;
+    min-width: 3rem;
+    width: 8%;
+}
+
+.formulario input:focus,
+.formulario select:focus,
+.formulario textarea:focus {
+    border-color: #3498db;
+    outline: none;
+}
+
+/* Botón de envío */
+.formulario button {
+    width: 100%;
+    background-color: #3498db;
+    color: white;
+    padding: 15px;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.formulario button:hover {
+    background-color: #2980b9;
 }
 
 .inicio-5{
