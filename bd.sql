@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 21-04-2025 a las 19:48:31
+-- Tiempo de generación: 07-05-2025 a las 21:39:47
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -33,9 +33,16 @@ CREATE TABLE `clientes` (
   `id_cliente` int(11) NOT NULL,
   `tel` int(11) NOT NULL,
   `email` varchar(255) NOT NULL,
-  `nombre` varchar(255) NOT NULL,
-  `apellido` varchar(255) NOT NULL
+  `nombre` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `clientes`
+--
+
+INSERT INTO `clientes` (`id_cliente`, `tel`, `email`, `nombre`) VALUES
+(8, 999999999, 'admin@admin.admin', 'lui'),
+(9, 988888888, 'admin@admin.admin', 'ASdasfgas');
 
 -- --------------------------------------------------------
 
@@ -50,6 +57,15 @@ CREATE TABLE `facturas` (
   `precio_final` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Volcado de datos para la tabla `facturas`
+--
+
+INSERT INTO `facturas` (`id_factura`, `precio_bruto`, `iva`, `precio_final`) VALUES
+(1, 10, 0, 10),
+(8, 0, 0, 0),
+(9, 0, 0, 0);
+
 -- --------------------------------------------------------
 
 --
@@ -58,9 +74,18 @@ CREATE TABLE `facturas` (
 
 CREATE TABLE `fechas` (
   `id_fecha` int(11) NOT NULL,
-  `fecha` date NOT NULL,
+  `fecha` datetime NOT NULL,
   `estado` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `fechas`
+--
+
+INSERT INTO `fechas` (`id_fecha`, `fecha`, `estado`) VALUES
+(1, '2025-05-03 00:00:00', 'pedido'),
+(8, '2025-05-31 00:00:00', 'pendiente'),
+(9, '2025-06-05 00:00:00', 'pendiente');
 
 -- --------------------------------------------------------
 
@@ -79,6 +104,14 @@ CREATE TABLE `pedidos` (
   `origen` varchar(255) NOT NULL,
   `destino` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `pedidos`
+--
+
+INSERT INTO `pedidos` (`id_pedido`, `descripcion`, `servicio`, `estado`, `id_fecha`, `id_cliente`, `id_factura`, `origen`, `destino`) VALUES
+(1, '999999999', 'trasladoOfi', 'pendiente', 8, 8, 8, '999999999', '999999999'),
+(2, '888888888', 'retiro', 'pendiente', 9, 9, 9, '888888888', '888888888');
 
 --
 -- Índices para tablas volcadas
@@ -119,25 +152,25 @@ ALTER TABLE `pedidos`
 -- AUTO_INCREMENT de la tabla `clientes`
 --
 ALTER TABLE `clientes`
-  MODIFY `id_cliente` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_cliente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT de la tabla `facturas`
 --
 ALTER TABLE `facturas`
-  MODIFY `id_factura` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_factura` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT de la tabla `fechas`
 --
 ALTER TABLE `fechas`
-  MODIFY `id_fecha` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_fecha` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT de la tabla `pedidos`
 --
 ALTER TABLE `pedidos`
-  MODIFY `id_pedido` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_pedido` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- Restricciones para tablas volcadas

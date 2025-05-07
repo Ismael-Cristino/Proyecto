@@ -22,7 +22,7 @@ li{
 }
 
 .margen{
-    padding: 5rem 10% 5rem 10%;
+    padding: 5rem 15% 5rem 15%;
 }
 
 .inicio-1-contenedor{
@@ -140,6 +140,7 @@ li{
 }
 
 .fila-doble input, .fila-direcciones input {
+    color: black;
     width: 100%;
 }
 

@@ -103,10 +103,6 @@ body {
   background-color: #f4f4f4;
   margin-bottom: 50px;
 }
-html, button, input, select, textarea {
-    font-family: 'Montserrat', Helvetica, sans-serif;
-    color: #bbb;
-}
 h1 {
   text-align: center;
   margin: 30px 15px;

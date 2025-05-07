@@ -23,9 +23,9 @@ function router (){
     if (!isset ($_REQUEST["tabla"])) return "views/inicio.php";
 
     $tablas=[
-        "user" => [ //defino las acciones permitidas para esa tabla
-            "crear" => "create.php",
-            "guardar" => "store.php",
+        "formulario" => [ //defino las acciones permitidas para esa tabla
+            "enviar" => "enviarForm.php",
+            "inicio" => "../inicio.php",
             "ver" => "show.php",
             "listar" => "list.php",
             "buscar" => "search.php",

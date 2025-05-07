@@ -2,7 +2,7 @@
 class db
 {
   const HOST = "localhost";
-  const DBNAME = "mvc_pdo";
+  const DBNAME = "proyecto";
   const USER = "root";
   const PASSWORD = ""; // Evidentemente adapta los valores
 
