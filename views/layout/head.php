@@ -15,6 +15,7 @@
 
     <link href="assets/css/head.css" rel="stylesheet">
     <link href="assets/css/inicio.css" rel="stylesheet">
+    <link href="assets/css/mudanza.css" rel="stylesheet">
 
 </head>
 
@@ -33,16 +34,15 @@
 
         <nav class="navbarMenu">
             <ul class="nav-listMenu">
-                <li class="nav-itemMenu"><a href="#">Inicio</a></li>
+                <li class="nav-itemMenu"><a href="index.php">Inicio</a></li>
                 <li class="nav-itemMenu">
                     <a href="#">Servicios <i class="fa fa-caret-down"></i></a>
                     <ul class="submenu">
-                        <li><a href="#">Mudanzas y otros servicios</a></li>
-                        <li><a href="#">Trasteros y Guardamuebles</a></li>
+                        <li><a href="index.php?tabla=servicios&accion=mudanza">Mudanzas y otros servicios</a></li>
+                        <li><a href="index.php?tabla=servicios&accion=trastero">Trasteros y Guardamuebles</a></li>
                     </ul>
                 </li>
-                <li class="nav-itemMenu"><a href="#">Contacto</a></li>
-                <li class="nav-itemMenu"><a href="#">Dashboard Administrativo</a></li>
+                <li class="nav-itemMenu"><a href="index.php?tabla=contacto&accion=ir">Contacto</a></li>
             </ul>
         </nav>
 

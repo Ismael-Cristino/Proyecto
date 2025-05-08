@@ -25,38 +25,16 @@ function router (){
     $tablas=[
         "formulario" => [ //defino las acciones permitidas para esa tabla
             "enviar" => "enviarForm.php",
-            "inicio" => "../inicio.php",
-            "ver" => "show.php",
-            "listar" => "list.php",
-            "buscar" => "search.php",
-            "borrar" => "delete.php",
-            "editar" => "edit.php"
         ],
-        "client" => [ //defino las acciones permitidas para esa tabla
-            "crear" => "create.php",
-            "guardar" => "store.php",
-            "ver" => "show.php",
-            "listar" => "list.php",
-            "buscar" => "search.php",
-            "borrar" => "delete.php",
-            "editar" => "edit.php"
+        "inicio" => [ //defino las acciones permitidas para esa tabla
+            "ir" => "../inicio.php",
         ],
-        "project" => [ //defino las acciones permitidas para esa tabla
-            "crear" => "create.php",
-            "guardar" => "store.php",
-            "ver" => "show.php",
-            "buscar" => "search.php",
-            "borrar" => "delete.php",
-            "editar" => "edit.php"
+        "servicios" => [ //defino las acciones permitidas para esa tabla
+            "mudanza" => "mudanza.php",
+            "trastero" => "trastero.php",
         ],
-        "task" => [ //defino las acciones permitidas para esa tabla
-            "crear" => "create.php",
-            "guardar" => "store.php",
-            "ver" => "show.php",
-            "buscar" => "search.php",
-            "borrar" => "delete.php",
-            "editar" => "edit.php",
-            "editStatus" => "editStatus.php",
+        "contacto" => [ //defino las acciones permitidas para esa tabla
+            "ir" => "contacto.php",
         ],
     ];
 

@@ -1,4 +1,4 @@
-.contenido-Inicio{
+.contenido-mudanza{
     display: flex;
     flex-direction: column;
     gap: 5rem;
@@ -17,7 +17,7 @@ li{
     color: rgb(38, 49, 131);
 }
 
-.inicio-1{
+.mudanza-1{
     background-color: #f7931e;
 }
 
@@ -25,26 +25,25 @@ li{
     padding: 5rem 15% 5rem 15%;
 }
 
-.inicio-1-contenedor{
+.mudanza-1-contenedor{
     display: grid;
     grid-template-columns:  minmax(200px, 2fr) minmax(100px, 1fr);
     align-items: center;
     color: white;
 }
 
-.inicio-1-texto h1{
+.mudanza-1 h1{
     font-size: 4rem;
-    text-align: start;
+    text-align: center;
     padding: 0;
     margin: 0;
-    margin-bottom: 2rem;
 }
 
-.inicio-1-texto p{
+.mudanza-1-texto p{
     font-size: 1.3rem;
 }
 
-.inicio-1-presupuesto{
+.mudanza-1-presupuesto{
     color: black;
     text-align: center;
     width: 20rem;
@@ -54,23 +53,23 @@ li{
     justify-self: end;
 }
 
-.inicio-1-presupuesto p{
+.mudanza-1-presupuesto p{
     font-weight: 500px;
     font-size: 1rem;
 }
 
-.inicio-1-presupuesto-numeros{
+.mudanza-1-presupuesto-numeros{
     font-size: 20px;
     color: #f7931e;
 }
 
-.inicio-2-contenedor{
+.mudanza-2-contenedor{
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 5rem;
 }
 
-.inicio-2-imagenes {
+.mudanza-2-imagenes {
     display: grid;
     grid-template-columns: auto auto;
     grid-auto-rows: min-content; /* cada fila toma el alto mínimo necesario */
@@ -78,36 +77,40 @@ li{
     align-items: start;
 }
 
-.inicio-2-img1 {
+.mudanza-2-img1 {
     grid-row: 1/3;
     border-radius: 3rem;
     width: 18rem !important;
     height: 40rem;
 }
 
-.inicio-2-img2 {
+.mudanza-2-img2 {
     border-radius: 3rem;
     width: 22rem !important;
     height: 25rem;
 }
 
-.inicio-2-img3 {
+.mudanza-2-img3 {
     border-radius: 3rem;
     width: 22rem !important;
     height: 13rem;
 }
 
-.inicio-2-texto{
+.mudanza-2-texto{
     display: flex;
     flex-direction: column;
     gap: 2rem;
 }
 
-.inicio-2-texto a{
+.mudanza-2-texto a{
     width: 15rem;
 }
 
-.inicio-3{
+.mudanza-3{
+    background-color: rgb(114, 4, 187);
+}
+
+.mudanza-3{
     background-color: rgb(132, 197, 197);
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -170,70 +173,14 @@ li{
     background-color: #2980b9;
 }
 
-.inicio-5{
+.mudanza-5{
     background-color: rgb(215, 235, 43);
 }
 
-.inicio-6{
+.mudanza-6{
 
 }
 
-.faq-section {
-    max-width: 800px;
-    margin: 0 auto;
-    background: white;
-    padding: 2rem;
-    border-radius: 10px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-  }
-  
-  .faq-section h2 {
-    text-align: center;
-    margin-bottom: 2rem;
-    font-size: 2rem;
-    color: #444;
-  }
-  
-  .faq-item {
-    margin-bottom: 1rem;
-    border-bottom: 1px solid #ddd;
-  }
-  
-  .faq-question {
-    background: none;
-    border: none;
-    width: 100%;
-    text-align: left;
-    font-size: 1.1rem;
-    padding: 1rem;
-    cursor: pointer;
-    position: relative;
-    font-weight: bold;
-    color: #007BFF;
-    transition: background 0.3s;
-  }
-  
-  .faq-question:hover {
-    background: #f0f0f0;
-  }
-  
-  .faq-question::after {
-    content: '+';
-    position: absolute;
-    right: 1rem;
-    font-size: 1.5rem;
-    transition: transform 0.3s;
-  }
-  
-  .faq-question.active::after {
-    transform: rotate(45deg);
-  }
-  
-  .faq-answer {
-    max-height: 0;
-    overflow: hidden;
-    padding: 0 1rem;
-    transition: max-height 0.4s ease;
-    color: #555;
-    line-height: 1.6;
-  }
+.mudanza-7{
+    background-color: rgb(101, 236, 89);
+}

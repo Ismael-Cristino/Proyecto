@@ -73,12 +73,12 @@ class formularioController
         if ($id == null) {
             $_SESSION["errores"] = $errores;
             $_SESSION["datos"] = $arrayDatos;
-            header("location:index.php?tabla=formulario&accion=inicio&error=true#inicio-4");
+            header("location:index.php?tabla=inicio&accion=ir&error=true#inicio-3");
             exit();
         } else {
             unset($_SESSION["errores"]);
             unset($_SESSION["datos"]);
-            header("location:index.php?tabla=formulario&accion=inicio&enviado=true#inicio-4");
+            header("location:index.php?tabla=inicio&accion=ir&enviado=true#inicio-3");
             exit();
         }
     }
