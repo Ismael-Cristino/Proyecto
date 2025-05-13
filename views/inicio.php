@@ -77,10 +77,7 @@ if (isset($_REQUEST["enviado"])) {
     <div class="margen inicio-3" id="inicio-3">
         <div class="inicio-3-cal">
             <h2>Calendario</h2>
-            <!--<script>
-                const fechas =  json_encode($fechas) ?>;
-            </script>
-            <div class="calendario" id="calendario"></div>-->
+            <div id='calendar'></div>
         </div>
         <div class="inicio-3-form">
             <h2>Formulario</h2>

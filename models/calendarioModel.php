@@ -1,5 +1,5 @@
 <?php
-require_once('config/db.php');
+require_once __DIR__ . '/../config/db.php';
 
 class calendarioModel
 {
@@ -10,36 +10,37 @@ class calendarioModel
         $this->conexion = db::conexion(); // Método estático para obtener PDO
     }
 
-    public function obtenerFechasMes(int $anio, int $mes): array
+    public function obtenerFechas()
     {
-        $inicioMes = "$anio-" . str_pad($mes, 2, '0', STR_PAD_LEFT) . "-01";
-        $finMes = date("Y-m-t", strtotime($inicioMes));
+        $sql = "
+            SELECT f.fecha, COUNT(p.id_pedido) as total_mudanzas,
+                   SUM(p.horas) as total_horas
+            FROM fechas f
+            LEFT JOIN pedidos p ON p.id_fecha = f.id_fecha
+            WHERE f.estado IN ('reservado', 'pagado')
+            GROUP BY f.fecha
+        ";
+        $stmt = $this->conexion->query($sql);
+        $fechas = [];
 
-        $sql = "SELECT 
-                    DATE(f.fecha) as dia,
-                    COUNT(*) as total_mudanzas,
-                    SUM(f.duracion) as total_horas
-                FROM fechas f
-                INNER JOIN pedidos p ON p.id_fecha = f.id
-                WHERE 
-                    f.estado IN ('pagado', 'reservado') AND
-                    f.fecha BETWEEN :inicio AND :fin
-                GROUP BY dia";
-
-        $stmt = $this->conexion->prepare($sql);
-        $stmt->execute([
-            ":inicio" => $inicioMes,
-            ":fin" => $finMes
-        ]);
-
-        $resultados = [];
         while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-            $resultados[$row['dia']] = [
-                "cantidad" => (int)$row['total_mudanzas'],
-                "horas" => (float)$row['total_horas']
+            $color = '#28a745'; // Verde por defecto (libre)
+
+            if (date('w', strtotime($row['fecha'])) == 0) {
+                $color = '#dc3545'; // Domingo (no laboral)
+            } elseif ($row['total_mudanzas'] >= 5 || $row['total_horas'] > 8) {
+                $color = '#dc3545'; // Rojo
+            } elseif ($row['total_mudanzas'] >= 1 || $row['total_horas'] <= 6) {
+                $color = '#ffc107'; // Amarillo
+            }
+
+            $fechas[] = [
+                'start' => $row['fecha'],
+                'display' => 'background',
+                'color' => $color,
             ];
         }
 
-        return $resultados;
+        return $fechas;
     }
 }

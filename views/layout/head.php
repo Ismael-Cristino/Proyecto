@@ -19,6 +19,9 @@
 
     <script src="assets/js/fq.js" defer></script>
     <script src="assets/js/calendario.js" defer></script>
+    <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.js'></script>
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/locales-all.global.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.min.css" rel="stylesheet" />
 </head>
 
 <body>

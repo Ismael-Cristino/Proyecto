@@ -237,3 +237,12 @@ li{
     color: #555;
     line-height: 1.6;
   }
+
+  #calendar {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  #calendar .fc-view-harness{
+    background-color: white;
+  }
