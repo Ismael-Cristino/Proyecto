@@ -17,6 +17,8 @@
     <link href="assets/css/inicio.css" rel="stylesheet">
     <link href="assets/css/mudanza.css" rel="stylesheet">
 
+    <script src="assets/js/fq.js" defer></script>
+    <script src="assets/js/calendario.js" defer></script>
 </head>
 
 <body>
