@@ -14,7 +14,7 @@ class calendarioModel
     {
         $sql = "
             SELECT f.fecha, COUNT(p.id_pedido) as total_mudanzas,
-                   SUM(p.horas) as total_horas
+                   SUM(p.horas) as total_horas, p.descripcion, f.id_fecha
             FROM fechas f
             LEFT JOIN pedidos p ON p.id_fecha = f.id_fecha
             WHERE f.estado IN ('reservado', 'pagado')
@@ -34,12 +34,36 @@ class calendarioModel
                 $color = '#ffc107'; // Amarillo
             }
 
+            $horas = (float) $row['total_horas'];
+
+            // Si hay más de 6h, marcar todo el día como ocupado
+            if ($horas > 6) {
+                $start = (new DateTime($row['fecha']))->format('Y-m-d');
+                $end = (new DateTime($row['fecha']))->format('Y-m-d');
+            } else {
+                // Fecha con hora específica
+                $startDateTime = new DateTime($row['fecha']);
+                $horasEnteras = floor($horas);
+                $minutos = ($horas - $horasEnteras) * 60;
+
+                $interval = new DateInterval(sprintf('PT%dH%dM', $horasEnteras, $minutos));
+                $endDateTime = clone $startDateTime;
+                $endDateTime->add($interval);
+
+                $start = $startDateTime->format('Y-m-d\TH:i:s');
+                $end = $endDateTime->format('Y-m-d\TH:i:s');
+            }
+
             $fechas[] = [
-                'start' => $row['fecha'],
+                'start' => $start,
+                'end' => $end,
                 'display' => 'background',
                 'color' => $color,
+                'title' => $row['descripcion'] ?? '',
+                'constraint' => $row['id_fecha'],
             ];
         }
+
 
         return $fechas;
     }
