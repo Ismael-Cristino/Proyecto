@@ -1,38 +1,38 @@
-.contenido-Inicio{
+.contenido-Inicio {
     display: flex;
     flex-direction: column;
     gap: 5rem;
 }
 
-h2{
+h2 {
     font-size: 3rem;
 }
 
-p{
+p {
     font-size: 1.5rem;
 }
 
-li{
+li {
     font-size: 1.3rem;
     color: rgb(38, 49, 131);
 }
 
-.inicio-1{
+.inicio-1 {
     background-color: #f7931e;
 }
 
-.margen{
+.margen {
     padding: 5rem 15% 5rem 15%;
 }
 
-.inicio-1-contenedor{
+.inicio-1-contenedor {
     display: grid;
-    grid-template-columns:  minmax(200px, 2fr) minmax(100px, 1fr);
+    grid-template-columns: minmax(200px, 2fr) minmax(100px, 1fr);
     align-items: center;
     color: white;
 }
 
-.inicio-1-texto h1{
+.inicio-1-texto h1 {
     font-size: 4rem;
     text-align: start;
     padding: 0;
@@ -40,11 +40,11 @@ li{
     margin-bottom: 2rem;
 }
 
-.inicio-1-texto p{
+.inicio-1-texto p {
     font-size: 1.3rem;
 }
 
-.inicio-1-presupuesto{
+.inicio-1-presupuesto {
     color: black;
     text-align: center;
     width: 20rem;
@@ -54,17 +54,17 @@ li{
     justify-self: end;
 }
 
-.inicio-1-presupuesto p{
+.inicio-1-presupuesto p {
     font-weight: 500px;
     font-size: 1rem;
 }
 
-.inicio-1-presupuesto-numeros{
+.inicio-1-presupuesto-numeros {
     font-size: 20px;
     color: #f7931e;
 }
 
-.inicio-2-contenedor{
+.inicio-2-contenedor {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 5rem;
@@ -73,7 +73,8 @@ li{
 .inicio-2-imagenes {
     display: grid;
     grid-template-columns: auto auto;
-    grid-auto-rows: min-content; /* cada fila toma el alto mínimo necesario */
+    grid-auto-rows: min-content;
+    /* cada fila toma el alto mínimo necesario */
     gap: 2rem;
     align-items: start;
 }
@@ -97,17 +98,17 @@ li{
     height: 13rem;
 }
 
-.inicio-2-texto{
+.inicio-2-texto {
     display: flex;
     flex-direction: column;
     gap: 2rem;
 }
 
-.inicio-2-texto a{
+.inicio-2-texto a {
     width: 15rem;
 }
 
-.inicio-3{
+.inicio-3 {
     background-color: rgb(132, 197, 197);
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -128,14 +129,16 @@ li{
     transition: border-color 0.3s;
 }
 
-.fila-doble, .fila-direcciones {
+.fila-doble,
+.fila-direcciones {
     display: flex;
     gap: 15px;
     justify-content: center;
     align-items: center;
 }
 
-.fila-doble input, .fila-direcciones input {
+.fila-doble input,
+.fila-direcciones input {
     color: black;
     width: 100%;
 }
@@ -170,79 +173,110 @@ li{
     background-color: #2980b9;
 }
 
-.inicio-5{
+.inicio-5 {
     background-color: rgb(215, 235, 43);
 }
 
-.inicio-6{
+.inicio-6 {}
 
+.elegirnos-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 50px;
+}
+
+.elegirnos-question{
+    font-size: 1.3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+    align-items: center;
+}
+
+.elegirnos-item img {
+    max-width: 150px;
 }
 
 .faq-section {
     max-width: 800px;
+}
+
+.faq-section,
+.elegirnos-section {
     margin: 0 auto;
     background: white;
     padding: 2rem;
     border-radius: 10px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-  }
-  
-  .faq-section h2 {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.faq-section h2 {
     text-align: center;
     margin-bottom: 2rem;
     font-size: 2rem;
     color: #444;
-  }
-  
-  .faq-item {
+}
+
+.faq-item,
+.elegirnos-item {
     margin-bottom: 1rem;
     border-bottom: 1px solid #ddd;
-  }
-  
-  .faq-question {
+    width: 100%;
+}
+
+.faq-question{
+    text-align: left;
+    font-size: 1.1rem;
+}
+
+.faq-question,
+.elegirnos-question {
     background: none;
     border: none;
     width: 100%;
-    text-align: left;
-    font-size: 1.1rem;
     padding: 1rem;
     cursor: pointer;
     position: relative;
     font-weight: bold;
     color: #007BFF;
     transition: background 0.3s;
-  }
-  
-  .faq-question:hover {
+}
+
+.faq-question:hover,
+.elegirnos-question:hover {
     background: #f0f0f0;
-  }
-  
-  .faq-question::after {
+}
+
+.faq-question::after,
+.elegirnos-question::after {
     content: '+';
     position: absolute;
     right: 1rem;
     font-size: 1.5rem;
     transition: transform 0.3s;
-  }
-  
-  .faq-question.active::after {
+}
+
+.faq-question.active::after,
+.elegirnos-question.active::after {
     transform: rotate(45deg);
-  }
-  
-  .faq-answer {
+}
+
+.faq-answer,
+.elegirnos-answer {
     max-height: 0;
     overflow: hidden;
     padding: 0 1rem;
     transition: max-height 0.4s ease;
     color: #555;
     line-height: 1.6;
-  }
+}
 
-  #calendar {
+#calendar {
     max-width: 1100px;
     margin: 0 auto;
-  }
+}
 
-  #calendar .fc-view-harness{
+#calendar .fc-view-harness {
     background-color: white;
-  }
+}

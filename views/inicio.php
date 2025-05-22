@@ -130,8 +130,63 @@ if (isset($_REQUEST["enviado"])) {
     </div>
     <div class="margen inicio-5">
         <h2>Por qué elegirnos</h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores, impedit repellat in natus quaerat omnis id
-            cumque quas repudiandae vitae, fugiat itaque a suscipit ea deleniti alias autem voluptates soluta!</p>
+        <section class="elegirnos-section">
+            <div class="elegirnos-item">
+                <button class="elegirnos-question">
+                    <img src="assets/img/user-check-solid.svg" alt="icono">
+                    <span>Profesionalidad</span>
+                </button>
+                <div class="elegirnos-answer">
+                    Nuestro equipo está altamente capacitado para manejar cualquier mudanza con eficacia.
+                </div>
+            </div>
+            <div class="elegirnos-item">
+                <button class="elegirnos-question">
+                    <img src="assets/img/user-check-solid.svg" alt="icono">
+                    <span>Atención al cliente</span>
+                </button>
+                <div class="elegirnos-answer">
+                    Creemos que es fundamental comunicarse de forma clara y transparente, siempre ofreciendo soluciones rápidas a cualquier consulta.
+                </div>
+            </div>
+            <div class="elegirnos-item">
+                <button class="elegirnos-question">
+                    <img src="assets/img/user-check-solid.svg" alt="icono">
+                    <span>Flexibilidad</span>
+                </button>
+                <div class="elegirnos-answer">
+                    Nos adaptamos a tus necesidades específicas, tanto si es una mudanza pequeña o el traslado de una empresa, para que tu vida no se detenga.
+                </div>
+            </div>
+            <div class="elegirnos-item">
+                <button class="elegirnos-question">
+                    <img src="assets/img/user-check-solid.svg" alt="icono">
+                    <span>Presupuestos gratuitos</span>
+                </button>
+                <div class="elegirnos-answer">
+                    Sabrás cuál será el coste de tu mudanza sin sorpresas.
+                </div>
+            </div>
+            <div class="elegirnos-item">
+                <button class="elegirnos-question">
+                    <img src="assets/img/user-check-solid.svg" alt="icono">
+                    <span>Embalaje completo</span>
+                </button>
+                <div class="elegirnos-answer">
+                    Nos aseguramos de que cada objeto, esté perfectamente protegido y llegue a su destino sin daños.
+                </div>
+            </div>
+            <div class="elegirnos-item">
+                <button class="elegirnos-question">
+                    <img src="assets/img/user-check-solid.svg" alt="icono">
+                    <span>Retirada de objetos</span>
+                </button>
+                <div class="elegirnos-answer">
+                    Nos encargamos de desechar, reciclar o almacenar todo aquello que no quieras trasladar.
+                </div>
+            </div>
+        </section>
+
     </div>
     <div class="margen inicio-6">
         <h2>Reseñas</h2>
