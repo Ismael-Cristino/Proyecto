@@ -21,10 +21,6 @@ li{
     background-color: #f7931e;
 }
 
-.margen{
-    padding: 5rem 15% 5rem 15%;
-}
-
 .mudanza-1-contenedor{
     display: grid;
     grid-template-columns:  minmax(200px, 2fr) minmax(100px, 1fr);

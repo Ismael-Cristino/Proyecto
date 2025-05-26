@@ -6,8 +6,6 @@ require_once("router/router.php");
 require_once("views/layout/head.php");
 $vista = router();
 
-require_once("views/layout/footer.php");
-
 ?>
 <div class="container-fluid">
     <div class="row">

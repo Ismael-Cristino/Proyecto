@@ -5,3 +5,14 @@ h1, h2, h3, h4, h5, h6, h7, h8{
 body{
     font-family: 'Inter', sans-serif;
 }
+
+h2{
+    font-size: 3rem;
+}
+
+.encabezado{
+    text-align: center;
+    color: #f7931e;
+    font-weight: bold;
+    margin-bottom: 4rem;
+}

@@ -16,10 +16,11 @@
     <link href="assets/css/general.css" rel="stylesheet">
     <link href="assets/css/head.css" rel="stylesheet">
     <link href="assets/css/inicio.css" rel="stylesheet">
-    <link href="assets/css/mudanza.css" rel="stylesheet">
+    <link href="assets/css/footer.css" rel="stylesheet">
+    <!--<link href="assets/css/mudanza.css" rel="stylesheet">-->
 
     <script src="assets/js/fq.js" defer></script>
-    <script src="assets/js/elegirnos.js" defer></script>
+    <!--<script src="assets/js/elegirnos.js" defer></script>-->
 
     <script src="assets/js/calendario.js" defer></script>
     <script src="assets/js/fulldalendar-6.1.17/dist/index.global.js" defer></script>

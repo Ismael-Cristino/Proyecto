@@ -4,10 +4,6 @@
     gap: 5rem;
 }
 
-h2 {
-    font-size: 3rem;
-}
-
 p {
     font-size: 1.5rem;
 }
@@ -17,12 +13,21 @@ li {
     color: rgb(38, 49, 131);
 }
 
+.inicio-2-texto .encabezado, .inicio-3-form .encabezado{
+    margin-bottom: 0 !important;
+}
+
 .inicio-1 {
     background-color: #f7931e;
 }
 
-.margen {
-    padding: 5rem 15% 5rem 15%;
+.margen{
+    padding: 2rem 15% 2rem 15%;
+}
+
+.margen-abajo{
+    padding-bottom: 5rem;
+    padding-top: 5rem;
 }
 
 .inicio-1-contenedor {
@@ -109,7 +114,6 @@ li {
 }
 
 .inicio-3 {
-    background-color: rgb(132, 197, 197);
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 5rem;
@@ -173,37 +177,43 @@ li {
     background-color: #2980b9;
 }
 
-.inicio-5 {
-    background-color: rgb(215, 235, 43);
-}
-
-.inicio-6 {}
-
 .elegirnos-section {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 50px;
 }
 
-.elegirnos-question{
-    font-size: 1.3rem;
+.elegirnos-item {
+    background-color: white;
+    border-radius: 20px;
+    height: 400px;
+    padding: 20px;
+    font-size: 16px;
+    width: 90%;
+    justify-self: center;
+}
+
+.elegirnos-question {
+    font-size: 1.5rem;
     display: flex;
     flex-direction: column;
     gap: 20px;
     text-align: center;
     align-items: center;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
 }
 
 .elegirnos-item img {
-    max-width: 150px;
+    width: 150px;
+    height: 150px;
 }
 
 .faq-section {
     max-width: 800px;
 }
 
-.faq-section,
-.elegirnos-section {
+.faq-section {
     margin: 0 auto;
     background: white;
     padding: 2rem;
@@ -218,20 +228,18 @@ li {
     color: #444;
 }
 
-.faq-item,
-.elegirnos-item {
+.faq-item {
     margin-bottom: 1rem;
     border-bottom: 1px solid #ddd;
     width: 100%;
 }
 
-.faq-question{
+.faq-question {
     text-align: left;
     font-size: 1.1rem;
 }
 
-.faq-question,
-.elegirnos-question {
+.faq-question{
     background: none;
     border: none;
     width: 100%;
@@ -243,13 +251,11 @@ li {
     transition: background 0.3s;
 }
 
-.faq-question:hover,
-.elegirnos-question:hover {
+.faq-question:hover{
     background: #f0f0f0;
 }
 
-.faq-question::after,
-.elegirnos-question::after {
+.faq-question::after {
     content: '+';
     position: absolute;
     right: 1rem;
@@ -257,13 +263,11 @@ li {
     transition: transform 0.3s;
 }
 
-.faq-question.active::after,
-.elegirnos-question.active::after {
+.faq-question.active::after {
     transform: rotate(45deg);
 }
 
-.faq-answer,
-.elegirnos-answer {
+.faq-answer {
     max-height: 0;
     overflow: hidden;
     padding: 0 1rem;

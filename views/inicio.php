@@ -23,7 +23,7 @@ if (isset($_REQUEST["enviado"])) {
 
 ?>
 <main class="contenido-Inicio">
-    <div class="margen inicio-1">
+    <div class="margen margen-abajo inicio-1">
         <div class="inicio-1-contenedor">
             <div class="inicio-1-texto">
                 <h1>MUDANZAS LOGISTICA</h1>
@@ -55,7 +55,7 @@ if (isset($_REQUEST["enviado"])) {
                 <img src="assets/img/waterfall.jpg" class="inicio-2-img3">
             </div>
             <div class="inicio-2-texto">
-                <h2>Sobre nosotros</h2>
+                <h2 class="encabezado">Sobre nosotros</h2>
                 <p>En Mudanzas Logística somos expertos en mudanzas, ofreciendo un servicio seguro, eficiente y
                     personalizado. Nos encargamos de todo el proceso: embalaje, carga, transporte y descarga,
                     cuidando cada detalle para que no tengas que preocuparte por nada.
@@ -76,11 +76,11 @@ if (isset($_REQUEST["enviado"])) {
     </div>
     <div class="margen inicio-3" id="inicio-3">
         <div class="inicio-3-cal">
-            <h2>Calendario</h2>
+            <h2 class="encabezado">Calendario</h2>
             <div id='calendar'></div>
         </div>
         <div class="inicio-3-form">
-            <h2>Formulario</h2>
+            <h2 class="encabezado">Formulario</h2>
             <div class="alert <?= $tipo ?> <?= $visibilidad ?>"><?= $cadena ?></div>
             <form class="formulario" method="POST" action="index.php?tabla=formulario&accion=enviar&evento=enviar">
                 <input type="text" name="nombre" id="nombre" placeholder="Nombre y apellidos" value="<?= $_SESSION["datos"]["nombre"] ?? "" ?>" aria-describedby="nombre">
@@ -129,58 +129,58 @@ if (isset($_REQUEST["enviado"])) {
         </div>
     </div>
     <div class="margen inicio-5">
-        <h2>Por qué elegirnos</h2>
+        <h2 class="encabezado">Por qué elegirnos</h2>
         <section class="elegirnos-section">
             <div class="elegirnos-item">
-                <button class="elegirnos-question">
+                <div class="elegirnos-question">
                     <img src="assets/img/user-check-solid.svg" alt="icono">
                     <span>Profesionalidad</span>
-                </button>
+                </div>
                 <div class="elegirnos-answer">
                     Nuestro equipo está altamente capacitado para manejar cualquier mudanza con eficacia.
                 </div>
             </div>
             <div class="elegirnos-item">
-                <button class="elegirnos-question">
-                    <img src="assets/img/user-check-solid.svg" alt="icono">
+                <div class="elegirnos-question">
+                    <img src="assets/img/headset-solid.svg" alt="icono">
                     <span>Atención al cliente</span>
-                </button>
+                </div>
                 <div class="elegirnos-answer">
                     Creemos que es fundamental comunicarse de forma clara y transparente, siempre ofreciendo soluciones rápidas a cualquier consulta.
                 </div>
             </div>
             <div class="elegirnos-item">
-                <button class="elegirnos-question">
-                    <img src="assets/img/user-check-solid.svg" alt="icono">
+                <div class="elegirnos-question">
+                    <img src="assets/img/thumbs-up-solid.svg" alt="icono">
                     <span>Flexibilidad</span>
-                </button>
+                </div>
                 <div class="elegirnos-answer">
                     Nos adaptamos a tus necesidades específicas, tanto si es una mudanza pequeña o el traslado de una empresa, para que tu vida no se detenga.
                 </div>
             </div>
             <div class="elegirnos-item">
-                <button class="elegirnos-question">
-                    <img src="assets/img/user-check-solid.svg" alt="icono">
+                <div class="elegirnos-question">
+                    <img src="assets/img/handshake-solid.svg" alt="icono">
                     <span>Presupuestos gratuitos</span>
-                </button>
+                </div>
                 <div class="elegirnos-answer">
                     Sabrás cuál será el coste de tu mudanza sin sorpresas.
                 </div>
             </div>
             <div class="elegirnos-item">
-                <button class="elegirnos-question">
-                    <img src="assets/img/user-check-solid.svg" alt="icono">
+                <div class="elegirnos-question">
+                    <img src="assets/img/boxes-packing-solid.svg" alt="icono">
                     <span>Embalaje completo</span>
-                </button>
+                </div>
                 <div class="elegirnos-answer">
                     Nos aseguramos de que cada objeto, esté perfectamente protegido y llegue a su destino sin daños.
                 </div>
             </div>
             <div class="elegirnos-item">
-                <button class="elegirnos-question">
-                    <img src="assets/img/user-check-solid.svg" alt="icono">
+                <div class="elegirnos-question">
+                    <img src="assets/img/truck-solid.svg" alt="icono">
                     <span>Retirada de objetos</span>
-                </button>
+                </div>
                 <div class="elegirnos-answer">
                     Nos encargamos de desechar, reciclar o almacenar todo aquello que no quieras trasladar.
                 </div>
@@ -189,13 +189,13 @@ if (isset($_REQUEST["enviado"])) {
 
     </div>
     <div class="margen inicio-6">
-        <h2>Reseñas</h2>
+        <h2 class="encabezado">Nuestras Reseñas</h2>
         <!-- Elfsight Google Reviews | Untitled Google Reviews -->
         <script src="https://static.elfsight.com/platform/platform.js" async></script>
         <div class="elfsight-app-6ff98a15-1cd5-498a-980f-9627856b749f" data-elfsight-app-lazy></div>
     </div>
     <div class="margen inicio-7">
-        <h2>FAQ</h2>
+        <h2 class="encabezado">FAQ - Preguntas Recientes</h2>
         <div class="faq-item">
             <button class="faq-question">1- ¿Cómo puedo reservar sus servicios?</button>
             <div class="faq-answer">

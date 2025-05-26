@@ -1,0 +1,9 @@
+footer{
+    background-color: rgb(43, 41, 41);
+    min-height: 350px;
+    color: white;
+}
+
+footer img{
+    width: 300px;
+}
