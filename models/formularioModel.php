@@ -42,7 +42,7 @@ class FormularioModel
             $stmtFact = $this->conexion->prepare($sqlFact);
             $stmtFact->execute([
                 ':precio_bruto'  => 0,
-                ':iva' => 0,
+                ':iva' => 21,
                 ':precio_final'=> 0,
             ]);
             $id_fact = $this->conexion->lastInsertId();

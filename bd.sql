@@ -52,9 +52,9 @@ INSERT INTO `clientes` (`id_cliente`, `tel`, `email`, `nombre`) VALUES
 
 CREATE TABLE `facturas` (
   `id_factura` int(11) NOT NULL,
-  `precio_bruto` int(11) NOT NULL,
+  `precio_bruto` DECIMAL(8,2) NOT NULL,
   `iva` int(11) NOT NULL,
-  `precio_final` int(11) NOT NULL
+  `precio_final` DECIMAL(8,2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --

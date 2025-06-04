@@ -71,3 +71,7 @@
     color: #f7931e;
     transition: 0.3s ease-in-out;
 }
+
+.navbar-brand img{
+    width: 60px;
+}
