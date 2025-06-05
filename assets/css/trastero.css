@@ -1,186 +1,132 @@
-.contenido-mudanza{
+.trastero-1 {
     display: flex;
-    flex-direction: column;
-    gap: 5rem;
-}
-
-h2{
-    font-size: 3rem;
-}
-
-p{
-    font-size: 1.5rem;
-}
-
-li{
-    font-size: 1.3rem;
-    color: rgb(38, 49, 131);
-}
-
-.mudanza-1{
     background-color: #f7931e;
-}
-
-.margen{
-    padding: 5rem 15% 5rem 15%;
-}
-
-.mudanza-1-contenedor{
-    display: grid;
-    grid-template-columns:  minmax(200px, 2fr) minmax(100px, 1fr);
-    align-items: center;
+    min-height: 15rem;
+    text-align: center;
+    align-items: center;        /* Centra verticalmente */
+    justify-content: center;    /* Centra horizontalmente */
     color: white;
+    margin-bottom: 5rem;
 }
 
-.mudanza-1 h1{
-    font-size: 4rem;
-    text-align: center;
-    padding: 0;
-    margin: 0;
+.trastero-2-imagenes {
+    position: relative;
+    display: inline-block;
 }
 
-.mudanza-1-texto p{
-    font-size: 1.3rem;
+.trastero-2-img1 {
+    width: 100%; /* mejor usar % en vez de rem si quieres responsividad */
+    height: 20rem; /* ajusta la altura como desees */
+    object-fit: cover; /* esto recorta la imagen */
+    object-position: center; /* centra el recorte */
+    border-radius: 1rem;
+    display: block;
 }
 
-.mudanza-1-presupuesto{
-    color: black;
-    text-align: center;
-    width: 20rem;
+.trastero-2-img2 {
+    width: 12rem;
+    position: absolute;
+    bottom: -1rem;  /* Separación hacia abajo */
+    right: -1rem;   /* Separación hacia la derecha */
+    box-shadow: -0.5rem -0.5rem 0 0 white; /* Sombra hacia la esquina superior izquierda */
+    border-radius: 0.5rem; /* Esquinas redondeadas de la sombra */
+}
+
+.trastero-2-texto{
+    margin: 0 1rem 0 1rem
+}
+
+.trastero-2 .encabezado{
+    margin-bottom: 2rem !important;
+}
+
+.trastero-2-contenedor{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+}
+
+.trastero-3-boxes {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+    .trastero-3-boxes {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.trastero-3-box {
+    background-color: #ffffff;
+    border-left: 5px solid #f7931e;
     padding: 2rem;
-    background-color: white;
-    border-radius: 20px;
-    justify-self: end;
-}
-
-.mudanza-1-presupuesto p{
-    font-weight: 500px;
+    border-radius: 1rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     font-size: 1rem;
+    line-height: 1.6;
+    color: #333;
 }
 
-.mudanza-1-presupuesto-numeros{
-    font-size: 20px;
+.trastero-3-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+}
+
+.trastero-4 {
+    padding: 3rem 1rem;
+}
+
+.trastero-4-tarjetas {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+    .trastero-4-tarjetas {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.trastero-4-tarjeta {
+    background-color: white;
+    border-radius: 1rem;
+    padding: 2rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+}
+
+.trastero-4-tarjeta:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+}
+
+.trastero-4-tarjeta i {
+    font-size: 2rem;
     color: #f7931e;
+    margin-bottom: 1rem;
+    display: block;
 }
 
-.mudanza-2-contenedor{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 5rem;
+.trastero-4-tarjeta h3 {
+    margin-bottom: 1rem;
+    font-size: 1.25rem;
+    color: #333;
 }
 
-.mudanza-2-imagenes {
-    display: grid;
-    grid-template-columns: auto auto;
-    grid-auto-rows: min-content; /* cada fila toma el alto mínimo necesario */
-    gap: 2rem;
-    align-items: start;
+.trastero-4-tarjeta p {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.6;
 }
 
-.mudanza-2-img1 {
-    grid-row: 1/3;
-    border-radius: 3rem;
-    width: 18rem !important;
-    height: 40rem;
-}
-
-.mudanza-2-img2 {
-    border-radius: 3rem;
-    width: 22rem !important;
-    height: 25rem;
-}
-
-.mudanza-2-img3 {
-    border-radius: 3rem;
-    width: 22rem !important;
-    height: 13rem;
-}
-
-.mudanza-2-texto{
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-}
-
-.mudanza-2-texto a{
-    width: 15rem;
-}
-
-.mudanza-3{
-    background-color: rgb(114, 4, 187);
-}
-
-.mudanza-3{
-    background-color: rgb(132, 197, 197);
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 5rem;
-    color: black;
-}
-
-.formulario input,
-.formulario select,
-.formulario textarea {
-    width: 100%;
-    padding: 12px 15px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    box-sizing: border-box;
-    font-size: 16px;
-    transition: border-color 0.3s;
-}
-
-.fila-doble, .fila-direcciones {
-    display: flex;
-    gap: 15px;
-    justify-content: center;
-    align-items: center;
-}
-
-.fila-doble input, .fila-direcciones input {
-    color: black;
-    width: 100%;
-}
-
-.fila-direcciones img {
-    align-self: flex-start;
-    min-width: 3rem;
-    width: 8%;
-}
-
-.formulario input:focus,
-.formulario select:focus,
-.formulario textarea:focus {
-    border-color: #3498db;
-    outline: none;
-}
-
-/* Botón de envío */
-.formulario button {
-    width: 100%;
-    background-color: #3498db;
-    color: white;
-    padding: 15px;
-    border: none;
-    border-radius: 10px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.formulario button:hover {
-    background-color: #2980b9;
-}
-
-.mudanza-5{
-    background-color: rgb(215, 235, 43);
-}
-
-.mudanza-6{
-
-}
-
-.mudanza-7{
-    background-color: rgb(101, 236, 89);
+.trastero-3, .trastero-4, .trastero-5{
+    margin-top: 5rem;
 }

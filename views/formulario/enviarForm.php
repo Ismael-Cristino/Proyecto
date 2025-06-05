@@ -13,6 +13,7 @@ $datos = [
     "direccionOri" => $_REQUEST["direccionOri"],
     "direccionDes" => $_REQUEST["direccionDes"],
     "descripcion" => $_REQUEST["descripcion"],
+    "origen" => $_REQUEST["origen"],
 ];
 
 if ($_REQUEST["evento"] == "enviar") {

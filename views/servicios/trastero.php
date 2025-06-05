@@ -1,128 +1,74 @@
-<?php
-
-require_once "assets/php/funciones.php";
-
-$cadena = "";
-$errores = [];
-$datos = [];
-$visibilidad = "invisible";
-$tipo = "alert-danger";
-
-if (isset($_REQUEST["error"])) {
-    $errores = ($_SESSION["errores"]) ?? [];
-    $datos = ($_SESSION["datos"]) ?? [];
-    $cadena = "Atención Se han producido Errores";
-    $visibilidad = "visible";
-}
-
-if(isset($_REQUEST["enviado"])) {
-    $cadena = "¡Formulario enviado con éxito!";
-    $visibilidad = "visible";
-    $tipo = "alert-success";
-}
-
-?>
-
-<main class="contenido-Inicio">
-    <div class="margen inicio-1">
-        Trastero
+<main class="contenido-trastero">
+    <div class="margen cabecera">
+        <h1>Trasteros y Guardamuebles</h1>
     </div>
-    <div class="margen inicio-2">
-        <div class="inicio-2-contenedor">
-            <div class="inicio-2-imagenes">
-                <img src="assets/img/waterfall.jpg" class="inicio-2-img1">
-                <img src="assets/img/waterfall.jpg" class="inicio-2-img2">
-                <img src="assets/img/waterfall.jpg" class="inicio-2-img3">
-            </div>
-            <div class="inicio-2-texto">
-                <h2>Sobre nosotros</h2>
-                <p>En Mudanzas Logística somos expertos en mudanzas, ofreciendo un servicio seguro, eficiente y
-                    personalizado. Nos encargamos de todo el proceso: embalaje, carga, transporte y descarga,
-                    cuidando cada detalle para que no tengas que preocuparte por nada.
+    <div class="margen trastero-2">
+        <div class="trastero-2-contenedor">
+            <div class="trastero-2-texto">
+                <h2 class="encabezado">Espacios Seguros Para Tus Pertenencias</h2>
+                <p>
+                    En Mudanzas Logística entendemos que en muchas situaciones es importante contar con un espacio adicional para almacenar tus
+                    muebles o enseres. Por eso, ponemos a tu disposición nuestro servicio de trasteros en Elche y Alicante y nuestro servicio
+                    de Guardamuebles en Elche, diseñados para ofrecerte un espacio seguro.
                 </p>
-                <a class="btn btn-info" href="#inicio-4">Solicita más información</a>
-                <ul>
-                    <li>Servicio de mudanzas locales y nacionales</li>
-                    <li>Embalaje profesional de muebles y objetos delicados</li>
-                    <li>Trasteros y guardamuebles seguros</li>
-                    <li>Personal capacitado</li>
-                    <li>Transporte rápido y puntual</li>
-                    <li>Presupuestos sin compromiso</li>
-                    <li>Amplia experiencia en el sector</li>
-                    <li>Compromiso con el cuidado de tus pertenencias</li>
-                </ul>
+            </div>
+            <div class="trastero-2-imagenes">
+                <img src="assets/img/img-t-1.jpg" class="trastero-2-img1">
+                <img src="assets/img/img-t-2.jpg" class="trastero-2-img2">
             </div>
         </div>
     </div>
-    <div class="margen inicio-4" id="inicio-4">
-        <div class="inicio-4-cal">
-            <h2>Calendario</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores, impedit repellat in natus quaerat omnis id
-                cumque quas repudiandae vitae, fugiat itaque a suscipit ea deleniti alias autem voluptates soluta!</p>
-        </div>
-        <div class="inicio-4-form">
-            <h2>Formulario</h2>
-            <div class="alert <?= $tipo ?> <?= $visibilidad ?>"><?= $cadena ?></div>
-            <form class="formulario" method="POST" action="index.php?tabla=formulario&accion=enviar&evento=enviar">
-                <input type="text" name="nombre" id="nombre" placeholder="Nombre y apellidos" value="<?= $_SESSION["datos"]["nombre"] ?? "" ?>" aria-describedby="nombre">
-                <?= isset($errores["nombre"]) ? '<div class="alert alert-danger" role="alert">' . DibujarErrores($errores, "nombre") . '</div>' : ""; ?>
-                
-                <div class="fila-doble">
-                    <input type="number" name="numero" id="numero" placeholder="Número de teléfono" value="<?= $_SESSION["datos"]["numero"] ?? "" ?>" aria-describedby="numero">
-                    <input type="email" name="email" id="email" placeholder="Dirección de correo electrónico" value="<?= $_SESSION["datos"]["email"] ?? "" ?>" aria-describedby="email">
-                </div>
-                <?= isset($errores["numero"]) ? '<div class="alert alert-danger" role="alert">' . DibujarErrores($errores, "numero") . '</div>' : ""; ?>
-                <?= isset($errores["email"]) ? '<div class="alert alert-danger" role="alert">' . DibujarErrores($errores, "email") . '</div>' : ""; ?>
-                
-                <input type="date" name="fecha" id="fecha" placeholder="Fecha de la mudanza" value="<?= $_SESSION["datos"]["fecha"] ?? "" ?>" aria-describedby="fecha">
-                <?= isset($errores["fecha"]) ? '<div class="alert alert-danger" role="alert">' . DibujarErrores($errores, "fecha") . '</div>' : ""; ?>
-                <select name="servicio" id="servicio">
-                    <option value="#"> -- Selecciona un servicio -- </option>
-                    <option value="trasladoDom" <?= (isset($_SESSION["datos"]["servicio"]) && $_SESSION["datos"]["servicio"] == "trasladoDom") ? "selected" : "" ?>>Traslado de domicilio</option>
-                    <option value="trasladoOfi" <?= isset($_SESSION["datos"]["servicio"]) && $_SESSION["datos"]["servicio"] == "trasladoOfi" ? "selected" : ""?>>Traslado de oficina</option>
-                    <option value="retiro" <?= isset($_SESSION["datos"]["servicio"]) && $_SESSION["datos"]["servicio"] == "retiro" ? "selected" : ""?>>Retiro de objetos en desuso</option>
-                    <option value="vaciado" <?= isset($_SESSION["datos"]["servicio"]) && $_SESSION["datos"]["servicio"] == "vaciado" ? "selected" : ""?>>Vaciados de trasteros</option>
-                    <option value="otros" <?= isset($_SESSION["datos"]["servicio"]) && $_SESSION["datos"]["servicio"] == "otros" ? "selected" : ""?>>Otros</option>
-                </select>
-                <?= isset($errores["servicio"]) ? '<div class="alert alert-danger" role="alert">' . DibujarErrores($errores, "servicio") . '</div>' : ""; ?>
-                <small>Recuera poner en ambos campos: Ciudad, Población, código postal, nº, etc.</small>
-                <div class="fila-direcciones">
-                    <input type="text" name="direccionOri" id="direccionOri"
-                        placeholder="Dirección Origen (Ciudad, Población, código postal, nº, etc.)" value="<?= $_SESSION["datos"]["direccionOri"] ?? "" ?>" aria-describedby="direccionOri">
-                    <img src="assets/img/flecha.png">
-                    <input type="text" name="direccionDes" id="direccionDes"
-                        placeholder="Dirección Destino (Ciudad, Población, código postal, nº, etc.)" value="<?= $_SESSION["datos"]["direccionDes"] ?? "" ?>" aria-describedby="direccionDes">
-                </div>
-                <?= isset($errores["direccionOri"]) ? '<div class="alert alert-danger" role="alert">' . DibujarErrores($errores, "direccionOri") . '</div>' : ""; ?>
-                <?= isset($errores["direccionDes"]) ? '<div class="alert alert-danger" role="alert">' . DibujarErrores($errores, "direccionDes") . '</div>' : ""; ?>
-                <textarea name="descripcion" id="descripcion" rows="10" cols="100"
-                    placeholder="Describe toda la información posible de la mudanza, que tipos de muebles se van a trasladar, cuantos son los muebles a trasladar, etc."
-                    aria-describedby="descripcion"><?= $_SESSION["datos"]["descripcion"] ?? "" ?></textarea>
-                <button type="submit">Envíar formulario</button>
-
-                <?php
-                //Una vez mostrados los errores, los eliminamos
-                unset($_SESSION["datos"]);
-                unset($_SESSION["errores"]);
-                ?>
-
-            </form>
+    <div class="margen trastero-3">
+        <h2 class="encabezado">Por Qué Usar El Servicio De Guardamuebles O Trastero</h2>
+        <div class="trastero-3-boxes">
+            <div class="trastero-3-box">
+                <p>Son perfectos para almacenar muebles, electrodomésticos u otros objetos voluminosos que necesites mantener seguros durante una
+                    mudanza, renovación de oficina o cambio de domicilio.</p>
+            </div>
+            <div class="trastero-3-box">
+                <p>Ideales si tienes un negocio y necesitas un espacio extra para archivos,
+                    equipos de trabajo, herramientas …etc.</p>
+            </div>
+            <div class="trastero-3-box">
+                <p>Si necesitas liberar espacio personal sin deshacerte de tus enseres. Sabrás que estarán
+                    seguros cuando necesites usarlos de nuevo</p>
+            </div>
         </div>
     </div>
-    <div class="margen inicio-5">
-        <h2>Por qué elegirnos</h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores, impedit repellat in natus quaerat omnis id
-            cumque quas repudiandae vitae, fugiat itaque a suscipit ea deleniti alias autem voluptates soluta!</p>
+
+    <div class="margen trastero-4">
+        <h2 class="encabezado">Ventajas De Contratar Con Nosotros</h2>
+        <div class="trastero-4-tarjetas">
+            <div class="trastero-4-tarjeta">
+                <i class="fas fa-truck"></i>
+                <h3>Servicio de transporte</h3>
+                <p>Podremos recoger tus objetos y almacenarlos de forma segura.</p>
+            </div>
+            <div class="trastero-4-tarjeta">
+                <i class="fas fa-hands-helping"></i>
+                <h3>Atención personalizada</h3>
+                <p>Nuestro equipo te ayudará a elegir la solución adecuada a cada caso.</p>
+            </div>
+            <div class="trastero-4-tarjeta">
+                <i class="fas fa-tags"></i>
+                <h3>Precios competitivos</h3>
+                <p>Te ofrecemos tarifas adaptadas para que pagues solo por lo que necesitas.</p>
+            </div>
+            <div class="trastero-4-tarjeta">
+                <i class="fas fa-lock"></i>
+                <h3>Seguridad para tus pertenencias</h3>
+                <p>Tus enseres estarán a salvo y listos para poder ser reutilizados cuando sea conveniente</p>
+            </div>
+        </div>
     </div>
-    <div class="margen inicio-6">
-        <h2>Reseñas</h2>
-        <!-- Elfsight Google Reviews | Untitled Google Reviews -->
-        <script src="https://static.elfsight.com/platform/platform.js" async></script>
-        <div class="elfsight-app-6ff98a15-1cd5-498a-980f-9627856b749f" data-elfsight-app-lazy></div>
+
+    <div class="margen trastero-5">
+        <h2 class="encabezado">¡Confía en nosotros para cuidar lo que más te importa!</h2>
+        <p>Contacta con nosotros para resolver tus dudas o para solicitar un presupuesto sin compromiso. En <b>Mudanzas Logística</b>, hacemos que almacenar tus pertenencias sea fácil, seguro y asequible.</p>
+        
+        <div class="boton-contenedor">
+            <a href="index.php?tabla=contacto&accion=ir#inicio-3" class="boton-formulario">Contacta con nosotros aquí</a>
+        </div>
     </div>
-    <div class="margen inicio-7">
-        <h2>FAQ</h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores, impedit repellat in natus quaerat omnis id
-            cumque quas repudiandae vitae, fugiat itaque a suscipit ea deleniti alias autem voluptates soluta!</p>
-    </div>
+
 </main>

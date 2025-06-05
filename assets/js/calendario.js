@@ -1,18 +1,40 @@
 document.addEventListener('DOMContentLoaded', function () {
-    var calendarEl = document.getElementById('calendar');
+    const calendarEl = document.getElementById('calendar');
+    if (!calendarEl) return;
 
-    var calendar = new FullCalendar.Calendar(calendarEl, {
+    const calendar = new FullCalendar.Calendar(calendarEl, {
+        initialView: 'dayGridMonth',
         locale: 'es',
+        height: 'auto',
         headerToolbar: {
             left: 'prev,next today',
             center: 'title',
             right: 'dayGridMonth,timeGridWeek,timeGridDay,listMonth'
         },
-        navLinks: true,
-        businessHours: true,
-        editable: false,
-        selectable: false,
-        events: 'controllers/ajax/obtenerFechas.php' // Aquí conectas tu PHP
+        events: {
+            url: 'assets/js/eventos.php', // Ruta correcta desde inicio.php
+            failure: function () {
+                alert('Error al cargar los eventos.');
+            }
+        },
+        loading: function (isLoading) {
+            if (isLoading) {
+                console.log('Cargando eventos...');
+            }
+        },
+        dateClick: function (info) {
+            calendar.changeView('timeGridDay', info.dateStr);
+        },
+        eventDidMount: function (info) {
+            if (info.event.title) {
+                new bootstrap.Tooltip(info.el, {
+                    title: info.event.title,
+                    placement: 'top',
+                    trigger: 'hover',
+                    container: 'body'
+                });
+            }
+        }
     });
 
     calendar.render();

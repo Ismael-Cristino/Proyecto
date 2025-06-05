@@ -8,7 +8,7 @@
     <title>APP MVC Y PDO </title>
     <!-- Bootstrap core CSS -->
     <link href="assets/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
     <!-- Custom styles for this template -->
     <link href="assets/css/dashboard.css" rel="stylesheet">
     <link href="assets/css/404.css" rel="stylesheet">
@@ -18,8 +18,11 @@
     <link href="assets/css/inicio.css" rel="stylesheet">
     <link href="assets/css/footer.css" rel="stylesheet">
     <link href="assets/css/mudanza.css" rel="stylesheet">
+    <link href="assets/css/trastero.css" rel="stylesheet">
+    <link href="assets/css/contacto.css" rel="stylesheet">
 
     <script src="assets/js/fq.js" defer></script>
+    <script src="assets/js/galeria.js" defer></script>
     <!--<script src="assets/js/elegirnos.js" defer></script>-->
 
     <script src="assets/js/calendario.js" defer></script>

@@ -38,25 +38,32 @@ function router()
         "contacto" => [ //defino las acciones permitidas para esa tabla
             "ir" => "contacto.php",
         ],
+        "calendario" => [
+            "obtener" => null // no necesita archivo porque se maneja manualmente
+        ],
     ];
 
     $tabla = $_REQUEST["tabla"];
-    if (!isset($tablas[$tabla])) return "views/404.php";
+    $accion = $_REQUEST["accion"] ?? null;
 
-    // si no hay accion definimos por defecto la accion listar
-    if (!isset($_REQUEST["accion"])) return "views/{$tabla}/list.php";
-    // Si la acción no está permitda
-    $accion = $_REQUEST["accion"];
-    if (!isset($tablas[$tabla][$accion])) return "views/404.php";
-
+    // 👇 Añade esta parte justo después de extraer tabla y acción
     if ($tabla === "calendario" && $accion === "obtener") {
-        require_once "controller/calendarioController.php";
+        require_once "controllers/calendarioController.php";
         $controller = new calendarioController();
-        $GLOBALS["fechas"] = $controller->obtenerCalendario(); // Así lo compartes con la vista
+        $controller->obtenerCalendario();
+        exit;
     }
 
-    // Por ejemplo si recibo la tabla=user y accion= listar
-    // esto llamará a la vista
-    // views/user/list.php dentro del require
+
+    // Verifica que la tabla existe
+    if (!isset($tablas[$tabla])) return "views/404.php";
+
+    // Si no hay acción, defino por defecto
+    if ($accion === null) return "views/{$tabla}/list.php";
+
+    // Acción no permitida
+    if (!isset($tablas[$tabla][$accion])) return "views/404.php";
+
+    // Continúa normalmente si no es calendario
     return "views/{$tabla}/{$tablas[$tabla][$accion]}";
 }

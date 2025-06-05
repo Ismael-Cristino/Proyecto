@@ -1,30 +1,5 @@
-<?php
-
-require_once "assets/php/funciones.php";
-
-$cadena = "";
-$errores = [];
-$datos = [];
-$visibilidad = "invisible";
-$tipo = "alert-danger";
-
-if (isset($_REQUEST["error"])) {
-    $errores = ($_SESSION["errores"]) ?? [];
-    $datos = ($_SESSION["datos"]) ?? [];
-    $cadena = "Atención Se han producido Errores";
-    $visibilidad = "visible";
-}
-
-if (isset($_REQUEST["enviado"])) {
-    $cadena = "¡Formulario enviado con éxito!";
-    $visibilidad = "visible";
-    $tipo = "alert-success";
-}
-
-?>
-
 <main class="contenido-Mudanza">
-    <div class="margen mudanza-1">
+    <div class="margen cabecera">
         <h1>Mudanzas y otros servicios</h1>
     </div>
     <div class="margen mudanza-2">
@@ -45,7 +20,7 @@ if (isset($_REQUEST["enviado"])) {
     <div class="margen mudanza-3">
         <h2 class="encabezado">¿Qué ofrecemos?</h2>
         <div class="mudanza-3-boxes">
-            
+
             <div class="mudanza-3-box box-1">
                 <h3 class="encabezado-2">Traslado de Domicilio</h3>
                 <p>
@@ -112,4 +87,49 @@ if (isset($_REQUEST["enviado"])) {
             </div>
         </div>
     </div>
+
+    <div class="margen mudanza-4">
+
+        <p>
+            Confía en <b>Mudanzas Logística</b> para hacer realidad tu traslado, ya sea grande o pequeño, local o a larga distancia. ¡Contáctanos
+            hoy mismo y descubre cómo podemos ayudarte!
+        </p><br>
+
+        <div class="slideshow-container">
+
+            <div class="mySlide">
+                <div class="numbertext">1 / 3</div>
+                <img src="assets/img/img-m-3.jpg" />
+            </div>
+
+            <div class="mySlide">
+                <div class="numbertext">2 / 3</div>
+                <img src="assets/img/img-m-3.jpg" />
+            </div>
+
+            <div class="mySlide">
+                <div class="numbertext">3 / 3</div>
+                <img src="assets/img/img-m-3.jpg" />
+            </div>
+
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+
+        <div style="text-align:center; margin-top: 1rem;">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+        </div>
+    </div>
+
+    <div class="margen mudanza-5">
+        <h2 class="encabezado">¡Confía en nosotros para cuidar lo que más te importa!</h2>
+        <p>Contacta con nosotros para resolver tus dudas o para solicitar un presupuesto sin compromiso. En <b>Mudanzas Logística</b>, hacemos que almacenar tus pertenencias sea fácil, seguro y asequible.</p>
+
+        <div class="boton-contenedor">
+            <a href="index.php?tabla=contacto&accion=ir#inicio-3" class="boton-formulario">Contacta con nosotros aquí</a>
+        </div>
+    </div>
+
 </main>

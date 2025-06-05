@@ -70,15 +70,17 @@ class formularioController
         $id = null;
         if (!$error) $id = $this->model->insert($arrayDatos);
 
+        $origen = $arrayDatos['origen'] ?? 'inicio';
+
         if ($id == null) {
             $_SESSION["errores"] = $errores;
             $_SESSION["datos"] = $arrayDatos;
-            header("location:index.php?tabla=inicio&accion=ir&error=true#inicio-3");
+            header("location:index.php?tabla=$origen&accion=ir&error=true#inicio-3");
             exit();
         } else {
             unset($_SESSION["errores"]);
             unset($_SESSION["datos"]);
-            header("location:index.php?tabla=inicio&accion=ir&enviado=true#inicio-3");
+            header("location:index.php?tabla=$origen&accion=ir&enviado=true#inicio-3");
             exit();
         }
     }

@@ -4,10 +4,6 @@
     gap: 5rem;
 }
 
-p {
-    font-size: 1.5rem;
-}
-
 li {
     font-size: 1.3rem;
     color: rgb(38, 49, 131);
@@ -17,9 +13,30 @@ li {
     margin-bottom: 0 !important;
 }
 
-.inicio-1 {
-    background-color: #f7931e;
+.inicio-3-cal .encabezado{
+    margin-bottom: 3rem !important;
 }
+
+.inicio-1 {
+    position: relative;
+    background: linear-gradient(135deg, #f7931e 0%, #ffa942 100%);
+    clip-path: ellipse(100% 100% at 50% 0%);
+    padding-bottom: 10rem;
+    overflow: hidden; /* para que el círculo no sobresalga */
+}
+
+.inicio-1::before {
+    content: '';
+    position: absolute;
+    top: -100px;
+    right: -250px;
+    width: 1000px;
+    height: 1000px;
+    background: rgba(255, 255, 255, 0.1); /* blanco muy tenue */
+    border-radius: 50%;
+    z-index: 0;
+}
+
 
 .margen{
     padding: 2rem 15% 2rem 15%;
@@ -31,6 +48,8 @@ li {
 }
 
 .inicio-1-contenedor {
+    position: relative;
+    z-index: 1;
     display: grid;
     grid-template-columns: minmax(200px, 2fr) minmax(100px, 1fr);
     align-items: center;

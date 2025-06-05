@@ -1,0 +1,136 @@
+.contenido-Contacto {
+    padding-bottom: 3rem;
+}
+
+.contacto-info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.contacto-detalles p,
+.contacto-detalles a {
+    margin: 0.5rem 0;
+    font-size: 1rem;
+}
+
+.contacto-formulario form {
+    display: flex;
+    flex-direction: column;
+}
+
+.contacto-formulario input,
+.contacto-formulario textarea {
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 0.25rem;
+    font-size: 1rem;
+}
+
+.contacto-formulario button {
+    background-color: #f7931e;
+    color: white;
+    border: none;
+    padding: 0.75rem;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 0.5rem;
+    transition: background-color 0.3s ease;
+}
+
+.contacto-formulario button:hover {
+    background-color: #e67e00;
+}
+
+.contacto-mapas .mapas {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+.mapa h3 {
+    margin-bottom: 0.5rem;
+}
+
+.inicio-3-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.calencario-form,
+.inicio-3-info {
+    background-color: #f9f9f9;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.inicio-3-info p,
+.inicio-3-info a {
+    margin: 0.5rem 0;
+    font-size: 0.95rem;
+}
+
+.inicio-3-info {
+    background-color: #f7f7f7;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+}
+
+.contacto-detalles {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.contacto-detalles p {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.contacto-detalles i {
+    color: #f7931e;
+    font-size: 1.2rem;
+}
+
+.contacto-cal {
+    padding: 3rem 2rem;
+    background-color: #fff8f0;
+    border-radius: 1rem;
+    margin-top: 4rem;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+}
+
+#calendar {
+    max-width: 900px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 1rem;
+    border-radius: 1rem;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.fc-toolbar-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.fc-button {
+    background-color: #f7931e;
+    border: none;
+    border-radius: 0.5rem;
+    color: white;
+    padding: 0.5rem 1rem;
+}
+
+.fc-button:hover {
+    background-color: #e67e00;
+}

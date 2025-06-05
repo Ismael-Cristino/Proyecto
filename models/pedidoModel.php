@@ -1,13 +1,13 @@
 <?php
 require_once __DIR__ . '/../config/db.php';
 
-class calendarioModel
+class Pedido
 {
     private $conexion;
 
     public function __construct()
     {
-        $this->conexion = db::conexion(); // Tu conexión PDO
+        $this->conexion = db::conexion(); // Devuelve instancia PDO
     }
 
     public function obtenerEventos()
@@ -18,12 +18,14 @@ class calendarioModel
             INNER JOIN fechas f ON p.id_fecha = f.id_fecha
             WHERE p.estado IN ('reservado', 'pagado', 'completado')
         ";
+        $stmt = $this->conexion->prepare($sql);
+        $stmt->execute();
 
-        $stmt = $this->conexion->query($sql);
+        $pedidos = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
         $eventos = [];
-
-        while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-            $color = match($row['estado']) {
+        foreach ($pedidos as $pedido) {
+            $color = match ($pedido['estado']) {
                 'completado' => '#28a745',
                 'pagado'     => '#17a2b8',
                 'reservado'  => '#007bff',
@@ -31,9 +33,9 @@ class calendarioModel
             };
 
             $eventos[] = [
-                'title' => $row['descripcion'],
-                'start' => date(DATE_ISO8601, strtotime($row['fecha_inicio'])),
-                'end'   => date(DATE_ISO8601, strtotime($row['fecha_fin'])),
+                'title' => $pedido['descripcion'],
+                'start' => date(DATE_ISO8601, strtotime($pedido['fecha_inicio'])),
+                'end'   => date(DATE_ISO8601, strtotime($pedido['fecha_fin'])),
                 'color' => $color
             ];
         }

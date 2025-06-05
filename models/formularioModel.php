@@ -27,12 +27,12 @@ class FormularioModel
             $id_cliente = $this->conexion->lastInsertId();
 
             // Insertar en Fechas
-            $sqlFecha = "INSERT INTO fechas (fecha, estado)
-                     VALUES (:fecha, :estado)";
+            $sqlFecha = "INSERT INTO fechas (fecha_inicio, fecha_fin, estado)
+                     VALUES (:fecha, :fecha, :estado)";
             $stmtFecha = $this->conexion->prepare($sqlFecha);
             $stmtFecha->execute([
                 ':fecha'  => $datos['fecha'],
-                ':estado' => 'pendiente', // puedes cambiarlo si hay lógica específica
+                ':estado' => 'disponible', // puedes cambiarlo si hay lógica específica
             ]);
             $id_fecha = $this->conexion->lastInsertId();
 

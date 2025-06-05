@@ -27,10 +27,11 @@ if (isset($_REQUEST["enviado"])) {
         <div class="inicio-1-contenedor">
             <div class="inicio-1-texto">
                 <h1>MUDANZAS LOGISTICA</h1>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore, fugiat ab excepturi dolore aliquam
-                    commodi nesciunt iste aperiam sunt recusandae voluptates eum doloremque assumenda, repellendus at! In
-                    earum
-                    dolorem a.</p>
+                <p>En Mudanzas Logística nos especializamos en hacer tu traslado más fácil, rápido y seguro. Ya sea una mudanza de hogar, 
+                    oficina o servicio personalizado, nos adaptamos a tus necesidades con profesionalidad y compromiso. 
+                    ¡Confía en nosotros para llevar tus pertenencias donde necesites, sin preocupaciones!
+                </p>
+
             </div>
             <div class="inicio-1-presupuesto">
                 <h5>¡Pídenos presupuesto!</h5>
@@ -77,12 +78,14 @@ if (isset($_REQUEST["enviado"])) {
     <div class="margen inicio-3" id="inicio-3">
         <div class="inicio-3-cal">
             <h2 class="encabezado">Calendario</h2>
+            <small>Por favor, intenta evitar una fecha ya ocupada mirando el siguiente calendario.</small><br><br>
             <div id='calendar'></div>
         </div>
         <div class="inicio-3-form">
             <h2 class="encabezado">Formulario</h2>
             <div class="alert <?= $tipo ?> <?= $visibilidad ?>"><?= $cadena ?></div>
             <form class="formulario" method="POST" action="index.php?tabla=formulario&accion=enviar&evento=enviar">
+                <input type="hidden" name="origen" value="inicio">
                 <input type="text" name="nombre" id="nombre" placeholder="Nombre y apellidos" value="<?= $_SESSION["datos"]["nombre"] ?? "" ?>" aria-describedby="nombre">
                 <?= isset($errores["nombre"]) ? '<div class="alert alert-danger" role="alert">' . DibujarErrores($errores, "nombre") . '</div>' : ""; ?>
 

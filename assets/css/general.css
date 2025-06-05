@@ -1,24 +1,89 @@
-h1, h2, h3, h4, h5, h6, h7, h8{
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+h7,
+h8 {
     font-family: 'Montserrat', sans-serif;
 }
 
-body{
+p {
+    font-size: 1.3rem;
+}
+
+body {
     font-family: 'Inter', sans-serif;
 }
 
-h2{
+h2 {
     font-size: 3rem;
 }
 
-.encabezado{
+.encabezado {
     text-align: center;
     color: #f7931e;
     font-weight: bold;
     margin-bottom: 4rem;
 }
 
-.encabezado-2{
+.encabezado-2 {
     color: #f7931e;
     font-weight: bold;
     margin-bottom: 1rem;
+}
+
+.boton-contenedor {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.boton-formulario {
+    font-size: 1.5rem;
+    display: inline-block;
+    margin-top: 2rem;
+    padding: 0.75rem 1.5rem;
+    background-color: #f7931e;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 0.5rem;
+    transition: background-color 0.3s ease;
+}
+
+.boton-formulario:hover {
+    background-color: #e67e00;
+}
+
+.cabecera {
+    position: relative;
+    display: flex;
+    background: linear-gradient(90deg, #f7931e 0%, #ffa942 100%);
+    min-height: 15rem;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    margin-bottom: 5rem;
+    overflow: hidden;
+}
+
+.cabecera::before {
+    content: '';
+    position: absolute;
+    top: -50px;
+    left: -150px;
+    width: 400px;
+    height: 400px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 50%;
+    z-index: 0;
+}
+
+.cabecera h1 {
+    position: relative;
+    z-index: 1;
+    font-size: 3rem;
+    margin: 0;
 }
