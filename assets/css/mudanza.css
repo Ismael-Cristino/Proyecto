@@ -168,6 +168,71 @@
     margin-top: 5rem;
 }
 
+/* Ajustes para responsive en móviles y tablets */
+
+@media (max-width: 899px) {
+    .mudanza-2-contenedor {
+        grid-template-columns: 1fr; /* Una sola columna en móvil */
+        gap: 2rem;
+        text-align: center;
+    }
+
+    .mudanza-2-imagenes {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 1rem;
+    }
+
+    .mudanza-2-img1 {
+        width: 90%;
+        max-width: 20rem;
+    }
+
+    .mudanza-2-img2 {
+        width: 6rem;
+        bottom: -1rem;
+        left: 1rem;
+        box-shadow: 0.5rem -0.5rem 0 0 white;
+    }
+
+    .mudanza-2-texto {
+        margin: 0 1rem;
+    }
+
+    .mudanza-3-boxes {
+        padding: 1rem;
+        gap: 1.5rem;
+    }
+
+    .slideshow-container {
+        height: 250px;
+    }
+
+    .mySlide img {
+        object-fit: cover;
+    }
+
+    .mudanza-5 .boton-contenedor {
+        display: flex;
+        justify-content: center;
+        padding: 1rem;
+    }
+
+    .boton-formulario {
+        font-size: 1rem;
+        padding: 0.75rem 1.25rem;
+        text-align: center;
+    }
+}
+
+@media (min-width: 1200px) {
+    .mudanza-3-boxes {
+        grid-template-columns: repeat(3, 1fr); /* Escritorio grande: 3 columnas */
+    }
+}
+
+
 /* Colores únicos por sección */
 .box-1 { border-left-color: #f7931e; }
 .box-2 { border-left-color: #27ae60; }

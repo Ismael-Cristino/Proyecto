@@ -25,7 +25,7 @@ if (isset($_REQUEST["enviado"])) {
 <main class="contenido-Inicio">
     <div class="margen margen-abajo inicio-1">
         <div class="inicio-1-contenedor">
-            <div class="inicio-1-texto">
+            <div class="inicio-1-texto fade-in-left delay-1">
                 <h1>MUDANZAS LOGISTICA</h1>
                 <p>En Mudanzas Logística nos especializamos en hacer tu traslado más fácil, rápido y seguro. Ya sea una mudanza de hogar, 
                     oficina o servicio personalizado, nos adaptamos a tus necesidades con profesionalidad y compromiso. 
@@ -33,7 +33,7 @@ if (isset($_REQUEST["enviado"])) {
                 </p>
 
             </div>
-            <div class="inicio-1-presupuesto">
+            <div class="inicio-1-presupuesto fade-in-right delay-2">
                 <h5>¡Pídenos presupuesto!</h5>
                 <small>Sin compromiso</small>
                 <hr>
@@ -51,18 +51,18 @@ if (isset($_REQUEST["enviado"])) {
     <div class="margen inicio-2">
         <div class="inicio-2-contenedor">
             <div class="inicio-2-imagenes">
-                <img src="assets/img/waterfall.jpg" class="inicio-2-img1">
-                <img src="assets/img/waterfall.jpg" class="inicio-2-img2">
-                <img src="assets/img/waterfall.jpg" class="inicio-2-img3">
+                <img src="assets/img/waterfall.jpg" class="inicio-2-img1 fade-in-up delay-1">
+                <img src="assets/img/waterfall.jpg" class="inicio-2-img2 fade-in-up delay-1">
+                <img src="assets/img/waterfall.jpg" class="inicio-2-img3 fade-in-up delay-1">
             </div>
             <div class="inicio-2-texto">
                 <h2 class="encabezado">Sobre nosotros</h2>
-                <p>En Mudanzas Logística somos expertos en mudanzas, ofreciendo un servicio seguro, eficiente y
+                <p class="fade-in-right delay-2">En Mudanzas Logística somos expertos en mudanzas, ofreciendo un servicio seguro, eficiente y
                     personalizado. Nos encargamos de todo el proceso: embalaje, carga, transporte y descarga,
                     cuidando cada detalle para que no tengas que preocuparte por nada.
                 </p>
-                <a class="btn btn-info" href="#inicio-3">Solicita más información</a>
-                <ul>
+                <a class="btn btn-info fade-in-right delay-2" href="#inicio-3">Solicita más información</a>
+                <ul class="fade-in-up delay-3">
                     <li>Servicio de mudanzas locales y nacionales</li>
                     <li>Embalaje profesional de muebles y objetos delicados</li>
                     <li>Trasteros y guardamuebles seguros</li>
@@ -76,12 +76,12 @@ if (isset($_REQUEST["enviado"])) {
         </div>
     </div>
     <div class="margen inicio-3" id="inicio-3">
-        <div class="inicio-3-cal">
+        <div class="inicio-3-cal fade-in-left delay-1">
             <h2 class="encabezado">Calendario</h2>
             <small>Por favor, intenta evitar una fecha ya ocupada mirando el siguiente calendario.</small><br><br>
             <div id='calendar'></div>
         </div>
-        <div class="inicio-3-form">
+        <div class="inicio-3-form fade-in-right delay-1">
             <h2 class="encabezado">Formulario</h2>
             <div class="alert <?= $tipo ?> <?= $visibilidad ?>"><?= $cadena ?></div>
             <form class="formulario" method="POST" action="index.php?tabla=formulario&accion=enviar&evento=enviar">
@@ -131,7 +131,7 @@ if (isset($_REQUEST["enviado"])) {
             </form>
         </div>
     </div>
-    <div class="margen inicio-5">
+    <div class="margen inicio-5 fade-in-up delay-1">
         <h2 class="encabezado">Por qué elegirnos</h2>
         <section class="elegirnos-section">
             <div class="elegirnos-item">

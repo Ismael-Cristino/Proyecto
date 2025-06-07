@@ -9,11 +9,17 @@ li {
     color: rgb(38, 49, 131);
 }
 
-.inicio-2-texto .encabezado, .inicio-3-form .encabezado{
+.inicio-2-texto .encabezado,
+.inicio-3-form .encabezado {
     margin-bottom: 0 !important;
 }
 
-.inicio-3-cal .encabezado{
+.inicio-3-cal {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.inicio-3-cal .encabezado {
     margin-bottom: 3rem !important;
 }
 
@@ -22,7 +28,8 @@ li {
     background: linear-gradient(135deg, #f7931e 0%, #ffa942 100%);
     clip-path: ellipse(100% 100% at 50% 0%);
     padding-bottom: 10rem;
-    overflow: hidden; /* para que el círculo no sobresalga */
+    overflow: hidden;
+    /* para que el círculo no sobresalga */
 }
 
 .inicio-1::before {
@@ -32,19 +39,10 @@ li {
     right: -250px;
     width: 1000px;
     height: 1000px;
-    background: rgba(255, 255, 255, 0.1); /* blanco muy tenue */
+    background: rgba(255, 255, 255, 0.1);
+    /* blanco muy tenue */
     border-radius: 50%;
     z-index: 0;
-}
-
-
-.margen{
-    padding: 2rem 15% 2rem 15%;
-}
-
-.margen-abajo{
-    padding-bottom: 5rem;
-    padding-top: 5rem;
 }
 
 .inicio-1-contenedor {
@@ -258,7 +256,7 @@ li {
     font-size: 1.1rem;
 }
 
-.faq-question{
+.faq-question {
     background: none;
     border: none;
     width: 100%;
@@ -270,7 +268,7 @@ li {
     transition: background 0.3s;
 }
 
-.faq-question:hover{
+.faq-question:hover {
     background: #f0f0f0;
 }
 
@@ -296,10 +294,104 @@ li {
 }
 
 #calendar {
-    max-width: 1100px;
-    margin: 0 auto;
+    max-width: 100%;
+    width: 100%;
+    overflow-x: auto;
 }
 
 #calendar .fc-view-harness {
     background-color: white;
+}
+
+.inicio-1-presupuesto,
+.elegirnos-item,
+.btn {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.inicio-1-presupuesto:hover,
+.elegirnos-item:hover,
+.btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+    .margen {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    .inicio-1 {
+        clip-path: none !important;
+    }
+
+    .inicio-1 {
+        border-radius: 0 !important;
+    }
+
+    .inicio-1-contenedor {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .inicio-1-texto h1 {
+        font-size: 2.5rem;
+        text-align: center;
+    }
+
+    .inicio-1-presupuesto {
+        justify-self: center;
+        width: 100%;
+    }
+
+    .inicio-2-contenedor {
+        grid-template-columns: 1fr;
+    }
+
+    .inicio-2-imagenes {
+        grid-template-columns: 1fr;
+        justify-items: center;
+    }
+
+    .inicio-2-img1,
+    .inicio-2-img2,
+    .inicio-2-img3 {
+        width: 100% !important;
+        height: auto;
+    }
+
+    .elegirnos-section {
+        grid-template-columns: 1fr;
+    }
+
+    .inicio-3 {
+        grid-template-columns: 1fr;
+    }
+
+    .fila-doble,
+    .fila-direcciones {
+        flex-direction: column;
+    }
+
+    .fila-direcciones img {
+        display: none;
+    }
+
+    #calendar {
+        width: 100%;
+        overflow-x: auto;
+    }
+
+    .formulario {
+        width: 100%;
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+        box-sizing: border-box;
+    }
+
+    .fila-doble,
+    .fila-direcciones {
+        width: 100%;
+    }
 }

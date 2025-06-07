@@ -87,3 +87,12 @@ h2 {
     font-size: 3rem;
     margin: 0;
 }
+
+.margen {
+    padding: 2rem 15% 2rem 15%;
+}
+
+.margen-abajo {
+    padding-bottom: 5rem;
+    padding-top: 5rem;
+}

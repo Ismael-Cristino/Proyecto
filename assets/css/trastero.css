@@ -3,22 +3,29 @@
     background-color: #f7931e;
     min-height: 15rem;
     text-align: center;
-    align-items: center;        /* Centra verticalmente */
-    justify-content: center;    /* Centra horizontalmente */
+    align-items: center;
+    /* Centra verticalmente */
+    justify-content: center;
+    /* Centra horizontalmente */
     color: white;
     margin-bottom: 5rem;
 }
 
 .trastero-2-imagenes {
     position: relative;
-    display: inline-block;
+    display: block;
+    max-width: 100%;
 }
 
 .trastero-2-img1 {
-    width: 100%; /* mejor usar % en vez de rem si quieres responsividad */
-    height: 20rem; /* ajusta la altura como desees */
-    object-fit: cover; /* esto recorta la imagen */
-    object-position: center; /* centra el recorte */
+    width: 100%;
+    /* mejor usar % en vez de rem si quieres responsividad */
+    height: 20rem;
+    /* ajusta la altura como desees */
+    object-fit: cover;
+    /* esto recorta la imagen */
+    object-position: center;
+    /* centra el recorte */
     border-radius: 1rem;
     display: block;
 }
@@ -26,21 +33,25 @@
 .trastero-2-img2 {
     width: 12rem;
     position: absolute;
-    bottom: -1rem;  /* Separación hacia abajo */
-    right: -1rem;   /* Separación hacia la derecha */
-    box-shadow: -0.5rem -0.5rem 0 0 white; /* Sombra hacia la esquina superior izquierda */
-    border-radius: 0.5rem; /* Esquinas redondeadas de la sombra */
+    bottom: -1rem;
+    /* Separación hacia abajo */
+    right: -1rem;
+    /* Separación hacia la derecha */
+    box-shadow: -0.5rem -0.5rem 0 0 white;
+    /* Sombra hacia la esquina superior izquierda */
+    border-radius: 0.5rem;
+    /* Esquinas redondeadas de la sombra */
 }
 
-.trastero-2-texto{
+.trastero-2-texto {
     margin: 0 1rem 0 1rem
 }
 
-.trastero-2 .encabezado{
+.trastero-2 .encabezado {
     margin-bottom: 2rem !important;
 }
 
-.trastero-2-contenedor{
+.trastero-2-contenedor {
     display: grid;
     grid-template-columns: 2fr 1fr;
 }
@@ -64,7 +75,7 @@
     border-left: 5px solid #f7931e;
     padding: 2rem;
     border-radius: 1rem;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     font-size: 1rem;
     line-height: 1.6;
@@ -73,7 +84,7 @@
 
 .trastero-3-box:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
 }
 
 .trastero-4 {
@@ -88,24 +99,18 @@
     margin: 0 auto;
 }
 
-@media (min-width: 768px) {
-    .trastero-4-tarjetas {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
 .trastero-4-tarjeta {
     background-color: white;
     border-radius: 1rem;
     padding: 2rem;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     text-align: center;
 }
 
 .trastero-4-tarjeta:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
 }
 
 .trastero-4-tarjeta i {
@@ -127,6 +132,35 @@
     line-height: 1.6;
 }
 
-.trastero-3, .trastero-4, .trastero-5{
+.trastero-3,
+.trastero-4,
+.trastero-5 {
     margin-top: 5rem;
+}
+
+/* Responsive */
+
+@media (min-width: 768px) {
+    .trastero-2-contenedor {
+        grid-template-columns: 2fr 1fr;
+        gap: 3rem;
+    }
+
+    .trastero-3-boxes {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .trastero-4-tarjetas {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .trastero-5 p {
+        font-size: 1.1rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .trastero-2-img1 {
+        height: 25rem;
+    }
 }

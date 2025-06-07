@@ -75,3 +75,77 @@
 .navbar-brand img{
     width: 60px;
 }
+
+.mobile-toggle {
+    display: none;
+}
+
+/* Responsive para navbar */
+@media (max-width: 700px) {
+    .navbar {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        padding: 10px 1rem;
+    }
+
+    .navbar-brand {
+        margin-bottom: 0;
+    }
+
+    .navbarMenu {
+        width: 100%;
+    }
+
+    .nav-listMenu {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+        display: none;
+        background-color: #f4f4f4;
+        padding: 1rem;
+        border-radius: 0.5rem;
+    }
+
+    .nav-itemMenu {
+        width: 100%;
+        padding: 0.5rem 0;
+    }
+
+    .nav-itemMenu a {
+        font-size: 1rem;
+    }
+
+    .submenu {
+        position: relative;
+        top: auto;
+        left: auto;
+        min-width: 100%;
+    }
+
+    .nav-listMenu.show {
+        display: flex;
+    }
+
+    .mobile-toggle {
+        display: block;
+        font-size: 1.5rem;
+        background: none;
+        border: none;
+        color: #000;
+    }
+}
+
+/* Ocultar toggle en escritorio */
+@media (max-width: 700px) {
+    .mobile-toggle {
+        display: block;
+        font-size: 1.5rem;
+        background: none;
+        border: none;
+        color: #000;
+        margin-left: auto;
+    }
+}
