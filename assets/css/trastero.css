@@ -19,28 +19,21 @@
 
 .trastero-2-img1 {
     width: 100%;
-    /* mejor usar % en vez de rem si quieres responsividad */
-    height: 20rem;
-    /* ajusta la altura como desees */
+    height: auto;
+    max-height: 25rem;
     object-fit: cover;
-    /* esto recorta la imagen */
     object-position: center;
-    /* centra el recorte */
     border-radius: 1rem;
-    display: block;
 }
 
 .trastero-2-img2 {
-    width: 12rem;
+    width: 8rem;
+    max-width: 100%;
     position: absolute;
     bottom: -1rem;
-    /* Separación hacia abajo */
     right: -1rem;
-    /* Separación hacia la derecha */
     box-shadow: -0.5rem -0.5rem 0 0 white;
-    /* Sombra hacia la esquina superior izquierda */
     border-radius: 0.5rem;
-    /* Esquinas redondeadas de la sombra */
 }
 
 .trastero-2-texto {
@@ -53,7 +46,8 @@
 
 .trastero-2-contenedor {
     display: grid;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 1fr; /* 1 columna en pantallas pequeñas */
+    gap: 2rem;
 }
 
 .trastero-3-boxes {
@@ -142,8 +136,7 @@
 
 @media (min-width: 768px) {
     .trastero-2-contenedor {
-        grid-template-columns: 2fr 1fr;
-        gap: 3rem;
+        grid-template-columns: 2fr 1fr; /* se convierte en 2 columnas en tablets o superior */
     }
 
     .trastero-3-boxes {
@@ -156,6 +149,22 @@
 
     .trastero-5 p {
         font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 767px) {
+    .trastero-2-img2 {
+        position: static;
+        margin-top: 1rem;
+        box-shadow: none;
+        display: block;
+        width: 100%;
+    }
+
+    .trastero-2-imagenes {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 }
 

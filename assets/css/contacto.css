@@ -46,7 +46,7 @@
 
 .contacto-mapas .mapas {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     gap: 2rem;
 }
 
@@ -133,4 +133,10 @@
 
 .fc-button:hover {
     background-color: #e67e00;
+}
+
+@media (min-width: 768px) {
+    .contacto-mapas .mapas {
+        grid-template-columns: 1fr 1fr;
+    }
 }
