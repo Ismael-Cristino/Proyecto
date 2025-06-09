@@ -29,7 +29,7 @@ function router()
             "enviar" => "enviarForm.php",
         ],
         "inicio" => [ //defino las acciones permitidas para esa tabla
-            "ir" => "inicio.php",
+            "ir" => "views/inicio.php",
         ],
         "servicios" => [ //defino las acciones permitidas para esa tabla
             "mudanza" => "mudanza.php",
