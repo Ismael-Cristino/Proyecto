@@ -33,7 +33,7 @@ if (isset($_REQUEST["enviado"])) {
             <div class="inicio-3-form calencario-form">
                 <h2 class="encabezado">Formulario</h2>
                 <div class="alert <?= $tipo ?> <?= $visibilidad ?>"><?= $cadena ?></div>
-                <form class="formulario" method="POST" action="index.php?tabla=formulario&accion=enviar&evento=enviar">
+                <form class="formulario" method="POST" action="/index.php?tabla=formulario&accion=enviar&evento=enviar">
                     <input type="hidden" name="origen" value="contacto">
                     <input type="text" name="nombre" id="nombre" placeholder="Nombre y apellidos" value="<?= $_SESSION["datos"]["nombre"] ?? "" ?>" aria-describedby="nombre">
                     <?= isset($errores["nombre"]) ? '<div class="alert alert-danger" role="alert">' . DibujarErrores($errores, "nombre") . '</div>' : ""; ?>
