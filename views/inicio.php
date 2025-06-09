@@ -21,14 +21,18 @@ if (isset($_REQUEST["enviado"])) {
     $tipo = "alert-success";
 }
 
+
+$baseFolder = str_replace('/index.php', '', $_SERVER['PHP_SELF']);
+define('BASE_URL', $baseFolder . '/');
+
 ?>
 <main class="contenido-Inicio">
     <div class="margen margen-abajo inicio-1">
         <div class="inicio-1-contenedor">
             <div class="inicio-1-texto fade-in-left delay-1">
                 <h1>MUDANZAS LOGISTICA</h1>
-                <p>En Mudanzas Logística nos especializamos en hacer tu traslado más fácil, rápido y seguro. Ya sea una mudanza de hogar, 
-                    oficina o servicio personalizado, nos adaptamos a tus necesidades con profesionalidad y compromiso. 
+                <p>En Mudanzas Logística nos especializamos en hacer tu traslado más fácil, rápido y seguro. Ya sea una mudanza de hogar,
+                    oficina o servicio personalizado, nos adaptamos a tus necesidades con profesionalidad y compromiso.
                     ¡Confía en nosotros para llevar tus pertenencias donde necesites, sin preocupaciones!
                 </p>
 
@@ -84,7 +88,7 @@ if (isset($_REQUEST["enviado"])) {
         <div class="inicio-3-form fade-in-right delay-1">
             <h2 class="encabezado">Formulario</h2>
             <div class="alert <?= $tipo ?> <?= $visibilidad ?>"><?= $cadena ?></div>
-            <form class="formulario" method="POST" action="tabla=formulario&accion=enviar&evento=enviar">
+            <form class="formulario" method="POST" action="<?=BASE_URL?>index.php?tabla=formulario&accion=enviar&evento=enviar">
                 <input type="hidden" name="origen" value="inicio">
                 <input type="text" name="nombre" id="nombre" placeholder="Nombre y apellidos" value="<?= $_SESSION["datos"]["nombre"] ?? "" ?>" aria-describedby="nombre">
                 <?= isset($errores["nombre"]) ? '<div class="alert alert-danger" role="alert">' . DibujarErrores($errores, "nombre") . '</div>' : ""; ?>
