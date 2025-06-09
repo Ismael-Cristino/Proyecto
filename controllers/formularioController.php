@@ -15,6 +15,8 @@ class formularioController
     public function solicitar(array $arrayDatos): void
     {
 
+        echo "prueba arriba";
+
         $error = false;
         $errores = [];
         //vaciamos los posibles errores
@@ -71,6 +73,10 @@ class formularioController
 
         $id = null;
         if (!$error) $id = $this->model->insert($arrayDatos);
+
+        echo "prueba";
+        var_dump($id);
+        die();
 
         $origen = $arrayDatos['origen'] ?? 'inicio';
 
