@@ -14,9 +14,6 @@ class formularioController
     public function solicitar(array $arrayDatos): void
     {
 
-        $baseFolder = str_replace('/index.php', '', $_SERVER['PHP_SELF']);
-        define('BASE_URL', $baseFolder . '/');
-
         $error = false;
         $errores = [];
         //vaciamos los posibles errores
