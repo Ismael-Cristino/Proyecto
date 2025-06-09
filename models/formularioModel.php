@@ -48,7 +48,7 @@ class FormularioModel
             $id_fact = $this->conexion->lastInsertId();
 
             // Insertar en Pedidos
-            $sqlPedido = "INSERT INTO Pedidos (id_cliente, id_fecha, id_factura, servicio, origen, destino, estado, descripcion)
+            $sqlPedido = "INSERT INTO pedidos (id_cliente, id_fecha, id_factura, servicio, origen, destino, estado, descripcion)
                       VALUES (:id_cliente, :id_fecha, :id_factura, :servicio, :origen, :destino, :estado, :descripcion)";
             $stmtPedido = $this->conexion->prepare($sqlPedido);
             $stmtPedido->execute([
