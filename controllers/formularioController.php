@@ -4,6 +4,7 @@ require_once "assets/php/funciones.php";
 
 class formularioController
 {
+    
     private $model;
 
     public function __construct()
@@ -76,12 +77,12 @@ class formularioController
         if ($id == null) {
             $_SESSION["errores"] = $errores;
             $_SESSION["datos"] = $arrayDatos;
-            header("index.php?tabla=$origen&accion=ir&error=true#inicio-3");
+            header("Location: index.php?tabla=$origen&accion=ir&error=true#inicio-3");
             exit();
         } else {
             unset($_SESSION["errores"]);
             unset($_SESSION["datos"]);
-            header("index.php?tabla=$origen&accion=ir&enviado=true#inicio-3");
+            header("Location: index.php?tabla=$origen&accion=ir&enviado=true#inicio-3");
             exit();
         }
     }
