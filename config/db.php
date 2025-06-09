@@ -3,8 +3,8 @@ class db
 {
   const HOST = "localhost";
   const DBNAME = "proyecto";
-  const USER = "root";
-  const PASSWORD = ""; // Evidentemente adapta los valores
+  const USER = "ismael";
+  const PASSWORD = "sA2DL7CQ"; // Evidentemente adapta los valores
 
   static public function conexion()
   {
