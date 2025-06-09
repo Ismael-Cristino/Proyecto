@@ -17,19 +17,19 @@ function router()
     $url = $_SERVER["REQUEST_URI"];
 
     // si pongo sólo la barra asumo que es ruta por defecto
-    if (substr($url, -1) == "/") return "views/inicio.php";
+    if (substr($url, -1) == "/") return "views/inicio/inicio.php";
 
     if (!strpos($url, "index.php")) return "views/404.php";
 
     // si hay index y no hay tabla Vista por defecto
-    if (!isset($_REQUEST["tabla"])) return "views/inicio.php";
+    if (!isset($_REQUEST["tabla"])) return "views/inicio/inicio.php";
 
     $tablas = [
         "formulario" => [ //defino las acciones permitidas para esa tabla
             "enviar" => "enviarForm.php",
         ],
         "inicio" => [ //defino las acciones permitidas para esa tabla
-            "ir" => "../inicio.php",
+            "ir" => "inicio.php",
         ],
         "servicios" => [ //defino las acciones permitidas para esa tabla
             "mudanza" => "mudanza.php",
